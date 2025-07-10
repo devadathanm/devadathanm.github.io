@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Presentation – Devadathan M</title>
+  <meta name="description" content="Responsive Canva portfolio presentation by Devadathan M.">
+
+  <!-- ✅ Font & Favicon -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5977/5977585.png" type="image/png">
+
+  <style>
+    /* === THEME VARIABLES === */
+    :root {
+      --accent: #ff0055;
+      --accent-dark: #cc0044;
+      --bg-dark: #0e0e0e;
+      --text-dark: #f0f0f0;
+      --box-dark: #1c1c1c;
+      --footer-bg-dark: #1a1a1a;
+    }
+
+    /* === RESET + BASE === */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      scroll-behavior: smooth;
+      user-select: none; /* Disable text selection */
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2em;
+      margin-top: 1.8em;
+    }
+
+    /* === EMBED CONTAINER === */
+    .canva-embed-wrapper {
+      position: relative;
+      padding-top: 56.25%;
+      max-width: 1600px;
+      margin: 2em auto;
+      border-radius: 8px;
+      background: var(--box-dark);
+      box-shadow: 0 2px 8px rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+
+    .canva-embed-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    .canva-embed-wrapper iframe.loaded {
+      opacity: 1;
+    }
+
+    /* === DOT LOADER === */
+    .dot-loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: flex;
+      gap: 8px;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+    }
+
+    .dot-loader span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--accent);
+      animation: pulse 1.2s ease-in-out infinite;
+    }
+
+    .dot-loader span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .dot-loader span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.4);
+      }
+    }
+
+    /* === RETURN BUTTON === */
+    .return-button {
+      display: inline-block;
+      margin: 2.5em auto 3em;
+      padding: 0.7em 1.5em;
+      background-color: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 1em;
+      text-decoration: none;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .return-button:hover {
+      background-color: var(--accent-dark);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    /* === FOOTER === */
+    footer {
+      text-align: center;
+      padding: 2em 1em;
+      font-size: 0.95em;
+      color: #aaa;
+      background-color: var(--footer-bg-dark);
+      border-top: 1px solid #333;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      color: var(--accent-dark);
+    }
+
+    /* === NO CARET / CURSOR BLINK === */
+    *:focus {
+      caret-color: transparent !important;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      h1 { font-size: 1.6em; }
+      .return-button { font-size: 0.95em; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ✅ Heading -->
+  <h1>Portfolio Presentation by Devadathan M</h1>
+
+  <!-- ✅ Canva Embed -->
+  <div class="canva-embed"
+       data-src="https://www.canva.com/design/DAGswHDrwaQ/oSInO8XDX9FppuTESrGuMg/view?embed"
+       data-title="Portfolio Presentation by Devadathan M"
+       data-link="https://www.canva.com/design/DAGswHDrwaQ/oSInO8XDX9FppuTESrGuMg/view">
+  </div>
+
+  <!-- ✅ Return Button -->
+  <div style="text-align: center;">
+    <a href="javascript:history.back()" class="return-button">← Back to Home</a>
+  </div>
+
+  <!-- ✅ Footer -->
+  <footer>
+    &copy; 2025 Devadathan M. All rights reserved. |
+    <a href="https://www.linkedin.com/in/devadathanm" target="_blank" rel="noopener">LinkedIn</a>
+  </footer>
+
+  <!-- ✅ Lazy Load Script -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const container = entry.target;
+          const src = container.dataset.src;
+          const title = container.dataset.title;
+
+          container.innerHTML = `
+            <div class="canva-embed-wrapper">
+              <div class="dot-loader">
+                <span></span><span></span><span></span>
+              </div>
+              <iframe
+                title="${title}"
+                loading="lazy"
+                role="document"
+                aria-label="${title}"
+                onload="this.classList.add('loaded'); this.previousElementSibling.style.display='none';"
+                onerror="this.previousElementSibling.style.display='none'; this.outerHTML='<p style=&quot;text-align:center; padding: 2em;&quot;>Failed to load presentation.</p>';"
+              ></iframe>
+            </div>
+          `;
+
+          const iframe = container.querySelector("iframe");
+          iframe.src = src;
+          observer.unobserve(container);
+        }
+      });
+    }, { threshold: 0.25 });
+
+    document.querySelectorAll('.canva-embed').forEach(embed => {
+      observer.observe(embed);
+    });
+  </script>
+
+</body>
+</html>
