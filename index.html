@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devadathan M | Mechanical Design & CAD Engineer</title>
+    <title>Devadathan M | Mechanical Design & R&D Engineer</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -51,7 +51,6 @@
         .group:hover .radar-ring { stroke-dashoffset: 50; }
         .bg-grain { background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0); background-size: 28px 28px; }
         
-        /* Advanced Animations & Scanlines */
         @keyframes scanline {
             0% { transform: translateY(-100%); }
             100% { transform: translateY(1000%); }
@@ -64,7 +63,6 @@
         }
         .glow-effect { animation: pulseGlow 5s ease-in-out infinite; }
 
-        /* Scroll Reveal Animation Styles */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -111,13 +109,11 @@
         </div>
     </header>
 
-    <!-- Hero / About Section (Completely Static & Clean - No Tilt) -->
+    <!-- Hero / About Section -->
     <section id="about" class="pt-32 pb-20 px-6 relative z-10">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <!-- Main Narrative Card -->
                 <div class="lg:col-span-8 bg-slateCard border border-titaniumBorder rounded-[3rem] p-8 md:p-12 relative overflow-hidden shadow-2xl reveal group">
-                    <!-- Ambient Glow Background Graphics -->
                     <div class="absolute -right-20 -top-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl glow-effect pointer-events-none"></div>
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-500/[0.02] to-transparent pointer-events-none animate-scan"></div>
                     
@@ -130,7 +126,7 @@
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-gray-500">Precision Engineering & Prototyping</span>
                     </h1>
                     <p class="text-gray-400 text-base md:text-lg max-w-2xl font-normal leading-relaxed mb-8">
-                        Ever since I started modeling parts, I’ve been fascinated by how design choices play out in physical mechanisms. As a mechanical engineer, I focus on R&D, hands-on prototyping, and CAD modeling—while also mentoring others in design tools. I genuinely enjoy the process of seeing an initial concept come together as a fully functional build.
+                        Ever since I started modeling parts, I’ve been fascinated by how design choices play out in physical mechanisms. As a mechanical engineer, I focus on R&D, hands-on prototyping, and CAD modeling—while also mentoring students and working professionals in design tools. I genuinely enjoy the process of seeing an initial concept come together as a fully functional build.
                     </p>
                     <div class="flex flex-wrap gap-4 relative z-20">
                         <a href="devadathanmresumecv.pdf" download class="px-6 py-3.5 rounded-full bg-white text-black text-xs font-bold uppercase tracking-wider hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] flex items-center space-x-2 transform hover:-translate-y-0.5">
@@ -144,9 +140,7 @@
                     </div>
                 </div>
 
-                <!-- Right Column Professional Cards (No Tilt) -->
                 <div class="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
-                    <!-- Card 1: Track Record -->
                     <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-6 flex items-center space-x-5 reveal group hover:border-emerald-500/50 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] transition-all relative overflow-hidden">
                         <div class="absolute right-0 top-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/15 transition-colors pointer-events-none"></div>
                         <div class="w-16 h-16 rounded-2xl bg-titaniumBorder/40 border border-titaniumBorder flex items-center justify-center flex-shrink-0 text-white group-hover:border-emerald-500/50 transition-colors">
@@ -159,7 +153,6 @@
                         </div>
                     </div>
 
-                    <!-- Card 2: Software Suite -->
                     <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-6 flex items-center space-x-5 reveal group hover:border-emerald-500/50 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] transition-all relative overflow-hidden">
                         <div class="absolute right-0 top-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/15 transition-colors pointer-events-none"></div>
                         <div class="w-16 h-16 rounded-2xl bg-titaniumBorder/40 border border-titaniumBorder flex items-center justify-center flex-shrink-0 text-white group-hover:border-emerald-500/50 transition-colors">
@@ -167,8 +160,8 @@
                         </div>
                         <div>
                             <span class="block text-xs uppercase text-gray-500 mono-text">Software Suite</span>
-                            <span class="block text-sm font-bold text-white mt-1">CAD, Simulation & Visual Tools</span>
-                            <span class="block text-xs text-gray-400 mt-0.5">SOLIDWORKS, CATIA, ANSYS & More</span>
+                            <span class="block text-sm font-bold text-white mt-1">CAD, Simulation & Workshop</span>
+                            <span class="block text-xs text-gray-400 mt-0.5">SOLIDWORKS, CATIA, Lathe & 3D Print</span>
                         </div>
                     </div>
                 </div>
@@ -183,219 +176,303 @@
                 <span class="text-xs uppercase tracking-widest text-gray-500 mono-text block mb-2">// Career Timeline</span>
                 <h2 class="text-2xl md:text-4xl font-bold text-white">Mechanical Experience</h2>
             </div>
+            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- CADD Centre -->
                 <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 flex flex-col justify-between reveal hover:border-gray-500 transition-all">
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">Training & Mentorship</span>
-                            <span class="text-xs text-gray-500 mono-text">2025-2026</span>
+                            <span class="text-xs text-gray-500 mono-text">2025 - 2026</span>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-1">Mechanical Faculty & CAD Trainer</h3>
-                        <p class="text-xs text-gray-400 mb-4">CADD Centre Kottayam</p>
-                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                            Delivered hands-on CAD training in SOLIDWORKS, CATIA, and AutoCAD. Mentored student design projects from concept through CAD implementation, GD&T application, and fabrication validation.
+                        <p class="text-xs text-emerald-400 mb-4">CADD Centre Kottayam</p>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            Delivered professional CAD instruction and technical mentorship to both engineering students and industry working professionals across advanced 3D modeling, surface design, structural analysis, and GD&T application.
                         </p>
+                        <ul class="text-xs text-gray-400 space-y-1.5 list-disc list-inside mb-6">
+                            <li>Mentored trainees through practical capstone modeling projects.</li>
+                            <li>Bridged classroom software training with industrial drafting standards.</li>
+                        </ul>
                     </div>
                     <span class="text-[10px] text-gray-500 mono-text">Kottayam, Kerala</span>
                 </div>
+
+                <!-- Agrowtein Labs -->
                 <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 flex flex-col justify-between reveal hover:border-gray-500 transition-all">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">R&D / Prototyping</span>
-                            <span class="text-xs text-gray-500 mono-text">2024-2025</span>
+                            <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">R&D & Fabrication</span>
+                            <span class="text-xs text-gray-500 mono-text">2024 - 2025</span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-1">Mechanical Engineer - R&D</h3>
-                        <p class="text-xs text-gray-400 mb-4">Agrowtein</p>
-                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                            Developed parametric CAD models and mechanisms for automation agritech equipment. Worked directly with fabricators through prototype build, assembly, and field testing troubleshooting.
+                        <h3 class="text-xl font-bold text-white mb-1">Mechanical Engineer (Design & Prototyping)</h3>
+                        <p class="text-xs text-emerald-400 mb-4">Agrowtein Labs</p>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            Led end-to-end mechanical product development—handling parametric CAD modeling, physical prototype fabrication, testing, design corrections, and structural updates for agricultural automation machinery.
                         </p>
+                        <ul class="text-xs text-gray-400 space-y-1.5 list-disc list-inside mb-6">
+                            <li>Optimized machine components through hands-on fabrication & fitment testing.</li>
+                            <li>Resolved shop-floor assembly bottlenecks via rapid design modifications.</li>
+                        </ul>
                     </div>
-                    <span class="text-[10px] text-gray-500 mono-text">Kerala</span>
+                    <span class="text-[10px] text-gray-500 mono-text">Kerala, India</span>
+                </div>
+
+                <!-- Freelance Mechanical Designer -->
+                <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 flex flex-col justify-between reveal hover:border-gray-500 transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">Independent Practice</span>
+                            <span class="text-xs text-gray-500 mono-text">Consulting</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">Freelance Mechanical Designer</h3>
+                        <p class="text-xs text-emerald-400 mb-4">Self-Employed</p>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            Delivered high-precision 3D CAD models, component detailing, and manufacturing-ready 2D orthographic drawings tailored to unique client specifications.
+                        </p>
+                        <ul class="text-xs text-gray-400 space-y-1.5 list-disc list-inside mb-6">
+                            <li>Translated conceptual sketches into fully constrained parametric assemblies.</li>
+                            <li>Ensured all deliverables adhered strictly to manufacturing tolerances.</li>
+                        </ul>
+                    </div>
+                    <span class="text-[10px] text-gray-500 mono-text">Remote / Client Projects</span>
+                </div>
+
+                <!-- IIEMS Operations Coordinator -->
+                <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 flex flex-col justify-between reveal hover:border-gray-500 transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">Operations Management</span>
+                            <span class="text-xs text-gray-500 mono-text">Operations</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">Operations Department Coordinator</h3>
+                        <p class="text-xs text-emerald-400 mb-4">IIEMS</p>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            Coordinated department logistics, resource planning, schedule execution, and operational workflows to maintain smooth institutional delivery.
+                        </p>
+                        <ul class="text-xs text-gray-400 space-y-1.5 list-disc list-inside mb-6">
+                            <li>Managed schedules, task delegation, and departmental communication.</li>
+                            <li>Ensured streamlined execution of internal operational workflows.</li>
+                        </ul>
+                    </div>
+                    <span class="text-[10px] text-gray-500 mono-text">Kottayam, Kerala</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Engineering Competencies Section (All 13 Tools Included) -->
+    <!-- Engineering Competencies Section -->
     <section id="skills" class="py-16 px-6 relative z-10 border-t border-titaniumBorder/40">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 reveal">
                 <div>
                     <span class="text-xs uppercase tracking-widest text-gray-500 mono-text block mb-2">// Technical Expertise</span>
-                    <h2 class="text-2xl md:text-3xl font-bold text-white">Software Stack & Engineering Capabilities</h2>
+                    <h2 class="text-2xl md:text-3xl font-bold text-white">Software Stack, Prototyping & Workshop Skills</h2>
                 </div>
-                <p class="text-xs text-gray-400 mt-2 md:mt-0">Hover skill capsules to trigger radar scanning and cross-highlight case studies.</p>
-            </div>
-            <div class="flex flex-wrap gap-3 reveal">
-                <!-- SOLIDWORKS -->
-                <div onmouseenter="highlightProject('solidworks')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
-                        <i class="fa-solid fa-cube text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                
+            
+            <div class="space-y-6 reveal">
+                <div>
+                    <span class="text-[10px] uppercase tracking-widest text-emerald-400 mono-text block mb-3">// CAD & Engineering Software Suites</span>
+                    <div class="flex flex-wrap gap-3">
+                        <div onmouseenter="highlightProject('solidworks')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                            <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
+                                <i class="fa-solid fa-cube text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                            </div>
+                            <span>SOLIDWORKS</span>
+                        </div>
+                        
+                        <div onmouseenter="highlightProject('catia')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                            <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
+                                <i class="fa-solid fa-draw-polygon text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                            </div>
+                            <span>CATIA V5</span>
+                        </div>
+
+                        <div onmouseenter="highlightProject('fusion')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                            <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
+                                <i class="fa-solid fa-layer-group text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                            </div>
+                            <span>Autodesk Fusion 360</span>
+                        </div>
+
+                        <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                            <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
+                                <i class="fa-solid fa-chart-line text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                            </div>
+                            <span>ANSYS Workbench</span>
+                        </div>
+
+                        <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                            <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
+                                <i class="fa-solid fa-gears text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                            </div>
+                            <span>Mastercam</span>
+                        </div>
+
+                        <div onmouseenter="highlightProject('autocad')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                            <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
+                                <i class="fa-solid fa-pen-ruler text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                            </div>
+                            <span>AutoCAD & AutoCAD Mechanical</span>
+                        </div>
+
+                        <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                            <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
+                                <i class="fa-solid fa-building text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                            </div>
+                            <span>Revit MEP</span>
+                        </div>
+
+                        <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                            <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
+                                <i class="fa-solid fa-compass text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                            </div>
+                            <span>Bentley MicroStation</span>
+                        </div>
                     </div>
-                    <span>SOLIDWORKS</span>
                 </div>
-                <!-- CATIA V5 -->
-                <div onmouseenter="highlightProject('catia')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
-                        <i class="fa-solid fa-draw-polygon text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+
+                <div>
+                    <span class="text-[10px] uppercase tracking-widest text-emerald-400 mono-text block mb-3">// Workshop, Prototyping & Manufacturing</span>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all flex items-center space-x-3 group">
+                            <i class="fa-solid fa-print text-emerald-400 text-xs"></i>
+                            <span>3D Printing & Rapid Prototyping</span>
+                        </div>
+                        <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all flex items-center space-x-3 group">
+                            <i class="fa-solid fa-industry text-emerald-400 text-xs"></i>
+                            <span>Lathe & Machine Shop Operations</span>
+                        </div>
+                        <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all flex items-center space-x-3 group">
+                            <i class="fa-solid fa-pencil text-emerald-400 text-xs"></i>
+                            <span>Manual Technical Drawing & Drafting</span>
+                        </div>
+                        <div onmouseenter="highlightProject('gdt')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group">
+                            <i class="fa-solid fa-ruler-combined text-emerald-400 text-xs"></i>
+                            <span>GD&T & ASME Standards</span>
+                        </div>
                     </div>
-                    <span>CATIA V5</span>
                 </div>
-                <!-- Autodesk Fusion 360 -->
-                <div onmouseenter="highlightProject('fusion')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
-                        <i class="fa-solid fa-layer-group text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+
+                <div>
+                    <span class="text-[10px] uppercase tracking-widest text-emerald-400 mono-text block mb-3">// Visualization & Documentation Suite</span>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder text-gray-300 text-xs font-medium tracking-wide flex items-center space-x-3">
+                            <i class="fa-solid fa-palette text-gray-400 text-xs"></i>
+                            <span>Vicon / Rendering</span>
+                        </div>
+                        <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder text-gray-300 text-xs font-medium tracking-wide flex items-center space-x-3">
+                            <i class="fa-solid fa-pen-nib text-gray-400 text-xs"></i>
+                            <span>Adobe Sketchbook</span>
+                        </div>
+                        <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder text-gray-300 text-xs font-medium tracking-wide flex items-center space-x-3">
+                            <i class="fa-solid fa-wand-magic-sparkles text-gray-400 text-xs"></i>
+                            <span>Canva</span>
+                        </div>
+                        <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder text-gray-300 text-xs font-medium tracking-wide flex items-center space-x-3">
+                            <i class="fa-solid fa-table text-gray-400 text-xs"></i>
+                            <span>Microsoft Excel</span>
+                        </div>
+                        <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder text-gray-300 text-xs font-medium tracking-wide flex items-center space-x-3">
+                            <i class="fa-solid fa-file-word text-gray-400 text-xs"></i>
+                            <span>Microsoft Word</span>
+                        </div>
                     </div>
-                    <span>Autodesk Fusion 360</span>
-                </div>
-                <!-- ANSYS Simulation -->
-                <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
-                        <i class="fa-solid fa-chart-line text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
-                    </div>
-                    <span>ANSYS Simulation</span>
-                </div>
-                <!-- Mastercam -->
-                <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
-                        <i class="fa-solid fa-gears text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
-                    </div>
-                    <span>Mastercam</span>
-                </div>
-                <!-- AutoCAD & Mechanical -->
-                <div onmouseenter="highlightProject('autocad')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
-                        <i class="fa-solid fa-pen-ruler text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
-                    </div>
-                    <span>AutoCAD & AutoCAD Mechanical</span>
-                </div>
-                <!-- Revit MEP -->
-                <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
-                        <i class="fa-solid fa-building text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
-                    </div>
-                    <span>Revit MEP</span>
-                </div>
-                <!-- Bentley MicroStation -->
-                <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
-                        <i class="fa-solid fa-compass text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
-                    </div>
-                    <span>Bentley MicroStation</span>
-                </div>
-                <!-- Viscom / Rendering -->
-                <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
-                        <i class="fa-solid fa-palette text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
-                    </div>
-                    <span>Viscom / Rendering</span>
-                </div>
-                <!-- Adobe Sketchbook -->
-                <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
-                        <i class="fa-solid fa-pencil text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
-                    </div>
-                    <span>Adobe Sketchbook</span>
-                </div>
-                <!-- Canva -->
-                <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
-                        <i class="fa-solid fa-wand-magic-sparkles text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
-                    </div>
-                    <span>Canva</span>
-                </div>
-                <!-- Microsoft Excel -->
-                <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
-                        <i class="fa-solid fa-table text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
-                    </div>
-                    <span>Microsoft Excel</span>
-                </div>
-                <!-- GD&T -->
-                <div onmouseenter="highlightProject('gdt')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
-                        <i class="fa-solid fa-ruler-combined text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
-                    </div>
-                    <span>GD&T & ASME Standards</span>
-                </div>
-                <!-- DFM / DFA -->
-                <div onmouseenter="highlightProject('dfm')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
-                        <i class="fa-solid fa-wrench text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
-                    </div>
-                    <span>DFM / DFA Prototyping</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Engineering Projects Section -->
+    <!-- Engineering Projects & Competitions Section -->
     <section id="projects" class="py-16 px-6 relative z-10 border-t border-titaniumBorder/40">
         <div class="max-w-7xl mx-auto">
             <div class="mb-12 reveal">
                 <span class="text-xs uppercase tracking-widest text-gray-500 mono-text block mb-2">// Featured Deliverables</span>
                 <h2 class="text-2xl md:text-4xl font-bold text-white">Project Case Studies & Competitions</h2>
             </div>
+            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Cardamom Cleaning Machine -->
                 <div id="proj-cardamom" data-tags="solidworks dfm fusion" class="project-card bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 transition-all duration-300 hover:border-emerald-500 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] flex flex-col justify-between reveal">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">Agrowtein R&D</span>
-                            <span class="text-xs text-gray-500 mono-text">2024-2025</span>
+                            <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">B.Tech Final Year Project</span>
+                            <span class="text-xs text-gray-500 mono-text">Amal Jyothi College</span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Cardamom Cleaning Machine</h3>
+                        <h3 class="text-xl font-bold text-white mb-3">Cardamom Cleaning & Processing Machine</h3>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            Conducted extensive field research through live interactions with farm owners, spice store workers, the Cardamom Research Center, and existing manufacturers to study operational flows. 
+                        </p>
                         <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                            Conducted a Design of Experiments (DOE) study to identify cleaning parameters, designing a specialized mechanism to remove debris while minimizing seed damage.
+                            Designed a portable, continuous-type auger mechanism focusing on minimal water consumption and high cleaning efficiency.
                         </p>
                     </div>
                     <button onclick="openModal('cardamom')" class="w-full py-3 rounded-full bg-titaniumBorder/40 hover:bg-white hover:text-black text-white text-xs font-semibold uppercase tracking-wider transition-all border border-titaniumBorder cursor-pointer">
                         Explore Case Study
                     </button>
                 </div>
+
+                <!-- Steaming & Folding Machine -->
                 <div id="proj-steaming" data-tags="solidworks dfm" class="project-card bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 transition-all duration-300 hover:border-emerald-500 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] flex flex-col justify-between reveal">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">Prototyping</span>
-                            <span class="text-xs text-gray-500 mono-text">Agrowtein</span>
+                            <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">Diploma Capstone</span>
+                            <span class="text-xs text-gray-500 mono-text">Prototyping</span>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-3">Semi-Automatic Steaming & Folding Machine</h3>
                         <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                            Designed a semi-automatic mechanism to streamline garment steaming and folding, taking the project from initial concept through a fabricated working prototype.
+                            Engineered a semi-automatic mechanism to streamline garment processing. Took the project from conceptual drafting through full fabrication, mechanism integration, and working prototype testing.
                         </p>
                     </div>
                     <button onclick="openModal('steaming')" class="w-full py-3 rounded-full bg-titaniumBorder/40 hover:bg-white hover:text-black text-white text-xs font-semibold uppercase tracking-wider transition-all border border-titaniumBorder cursor-pointer">
                         Explore Case Study
                     </button>
                 </div>
+
+                <!-- 11th GKDC -->
                 <div id="proj-gokart" data-tags="catia gdt" class="project-card bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 transition-all duration-300 hover:border-emerald-500 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] flex flex-col justify-between reveal">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">National Competition</span>
+                            <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">National Participant</span>
                             <span class="text-xs text-gray-500 mono-text">Go-Kart Challenge</span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3">11th Go-Kart Design Challenge</h3>
+                        <h3 class="text-xl font-bold text-white mb-3">11th Go-Kart Design Challenge (GKDC)</h3>
                         <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                            Contributed to chassis structure, steering geometry, and braking-system design, as well as hands-on fabrication and dynamic track testing.
+                            National-level participant contributing to structural chassis design, steering geometry calculations, braking layout, and hands-on track testing integration.
                         </p>
                     </div>
                     <button onclick="openModal('gokart')" class="w-full py-3 rounded-full bg-titaniumBorder/40 hover:bg-white hover:text-black text-white text-xs font-semibold uppercase tracking-wider transition-all border border-titaniumBorder cursor-pointer">
                         Explore Case Study
                     </button>
                 </div>
+
+                <!-- SEVC 2025 -->
+                <div id="proj-sevc" data-tags="solidworks fusion" class="project-card bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 transition-all duration-300 hover:border-emerald-500 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] flex flex-col justify-between reveal">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">National Participant</span>
+                            <span class="text-xs text-gray-500 mono-text">SEVC 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Sustainable Electric Vehicle Challenge (SEVC)</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            National-level participant focusing on eco-friendly electric powertrain layout optimization, packaging efficiency, and lightweight structural components.
+                        </p>
+                    </div>
+                    <button onclick="openModal('sevc')" class="w-full py-3 rounded-full bg-titaniumBorder/40 hover:bg-white hover:text-black text-white text-xs font-semibold uppercase tracking-wider transition-all border border-titaniumBorder cursor-pointer">
+                        Explore Case Study
+                    </button>
+                </div>
+
+                <!-- NASA Space Apps -->
                 <div id="proj-nasa" data-tags="fusion solidworks" class="project-card bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 transition-all duration-300 hover:border-emerald-500 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] flex flex-col justify-between reveal">
                     <div>
                         <div class="flex items-center justify-between mb-4">
@@ -404,10 +481,27 @@
                         </div>
                         <h3 class="text-xl font-bold text-white mb-3">Forest-Fire Monitoring System</h3>
                         <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                            Contributed system-workflow design for a forest-fire monitoring and rapid-response concept.
+                            Designed system-workflow logic and rapid-response infrastructure concepts for environmental monitoring and early detection during the global NASA hackathon.
                         </p>
                     </div>
                     <button onclick="openModal('nasa')" class="w-full py-3 rounded-full bg-titaniumBorder/40 hover:bg-white hover:text-black text-white text-xs font-semibold uppercase tracking-wider transition-all border border-titaniumBorder cursor-pointer">
+                        Explore Case Study
+                    </button>
+                </div>
+
+                <!-- Smart India Hackathon -->
+                <div id="proj-sih" data-tags="autocad solidworks" class="project-card bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 transition-all duration-300 hover:border-emerald-500 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] flex flex-col justify-between reveal">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">National Hackathon</span>
+                            <span class="text-xs text-gray-500 mono-text">SIH 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Smart India Hackathon (Technical Volunteer)</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Served as a technical volunteer supporting national-level innovation execution, hardware-software coordination, and troubleshooting during SIH 2024.
+                        </p>
+                    </div>
+                    <button onclick="openModal('sih')" class="w-full py-3 rounded-full bg-titaniumBorder/40 hover:bg-white hover:text-black text-white text-xs font-semibold uppercase tracking-wider transition-all border border-titaniumBorder cursor-pointer">
                         Explore Case Study
                     </button>
                 </div>
@@ -415,25 +509,65 @@
         </div>
     </section>
 
-    <!-- Education & Training Section -->
+    <!-- Education & Internships Section -->
     <section id="education" class="py-16 px-6 relative z-10 border-t border-titaniumBorder/40">
         <div class="max-w-7xl mx-auto">
             <div class="mb-10 reveal">
-                <span class="text-xs uppercase tracking-widest text-gray-500 mono-text block mb-2">// Academic Background</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-white">Education & Industrial Training</h2>
+                <span class="text-xs uppercase tracking-widest text-gray-500 mono-text block mb-2">// Academic & Industrial Background</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-white">Education & Internships</h2>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 reveal hover:border-gray-500 transition-all">
-                    <i class="fa-solid fa-graduation-cap text-emerald-400 text-xl mb-4"></i>
-                    <h4 class="text-lg font-bold text-white mb-1">B.Tech in Mechanical Engineering</h4>
-                    <p class="text-xs text-gray-400 mb-2">Amal Jyothi College of Engineering and Technology (Autonomous)</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- B.Tech Degree -->
+                <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 reveal hover:border-gray-500 transition-all flex flex-col justify-between">
+                    <div>
+                        <i class="fa-solid fa-graduation-cap text-emerald-400 text-xl mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-1">B.Tech in Mechanical</h4>
+                        <p class="text-xs text-emerald-400 mb-3">Amal Jyothi College of Engineering</p>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                            Focused on machine design, thermal systems, and finalized the Cardamom Processing Machine project.
+                        </p>
+                    </div>
                     <span class="text-[10px] text-gray-500 mono-text">2022 - 2025</span>
                 </div>
-                <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 reveal hover:border-gray-500 transition-all">
-                    <i class="fa-solid fa-ship text-emerald-400 text-xl mb-4"></i>
-                    <h4 class="text-lg font-bold text-white mb-1">Cochin Shipyard Ltd. Training</h4>
-                    <p class="text-xs text-gray-400 mb-2">Marine & Heavy Engineering Internship</p>
-                    <span class="text-[10px] text-gray-500 mono-text">Ship construction, large-scale fabrication, dockyard ops</span>
+
+                <!-- Diploma -->
+                <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 reveal hover:border-gray-500 transition-all flex flex-col justify-between">
+                    <div>
+                        <i class="fa-solid fa-certificate text-emerald-400 text-xl mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-1">Diploma in Mechanical</h4>
+                        <p class="text-xs text-emerald-400 mb-3">Technical Board</p>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                            Built practical foundations in workshop machining, manual drafting, and built the Steaming & Folding Machine.
+                        </p>
+                    </div>
+                    <span class="text-[10px] text-gray-500 mono-text">Core Technical Foundation</span>
+                </div>
+
+                <!-- Keerachandra Pvt Ltd Internship -->
+                <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 reveal hover:border-gray-500 transition-all flex flex-col justify-between">
+                    <div>
+                        <i class="fa-solid fa-industry text-emerald-400 text-xl mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-1">Keerachandra Pvt. Ltd.</h4>
+                        <p class="text-xs text-emerald-400 mb-3">Industrial Internship</p>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                            Gained hands-on floor exposure to manufacturing processes, industrial machinery operations, and production workflows.
+                        </p>
+                    </div>
+                    <span class="text-[10px] text-gray-500 mono-text">Industrial Training</span>
+                </div>
+
+                <!-- Cochin Shipyard Training -->
+                <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 reveal hover:border-gray-500 transition-all flex flex-col justify-between">
+                    <div>
+                        <i class="fa-solid fa-ship text-emerald-400 text-xl mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-1">Cochin Shipyard Ltd.</h4>
+                        <p class="text-xs text-emerald-400 mb-3">Heavy Engineering Internship</p>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                            Observed large-scale heavy fabrication, marine vessel construction, and complex dockyard operations.
+                        </p>
+                    </div>
+                    <span class="text-[10px] text-gray-500 mono-text">Shipyard Training</span>
                 </div>
             </div>
         </div>
@@ -644,11 +778,44 @@
         }
 
         const caseStudyData = {
-            cardamom: { title: "Cardamom Cleaning Machine (Agrowtein)", role: "R&D Mechanical Engineer", desc: "Ran a Design of Experiments (DOE) study to identify key parameters affecting cleaning quality, then designed a specialized mechanism to remove debris while minimizing seed damage.", impact: "Successfully bridged CAD prototyping to a working prototype, eliminating fabrication bottlenecks." },
-            steaming: { title: "Semi-Automatic Steaming & Folding Machine", role: "R&D Prototyping Lead", desc: "Designed a semi-automatic mechanism to streamline garment steaming and folding, taking the project from initial concept through a fabricated working prototype.", impact: "Streamlined automated garment handling operations." },
-            gokart: { title: "11th Go-Kart Design Challenge", role: "Chassis & Systems Designer", desc: "Contributed to chassis structure, steering geometry, and braking-system design, as well as hands-on fabrication and dynamic testing.", impact: "Successfully built and dynamically tested high-performance chassis on-track." },
-            nasa: { title: "NASA Space Apps Challenge", role: "Workflow Systems Designer", desc: "Contributed system-workflow design for a forest-fire monitoring and rapid-response concept.", impact: "Developed rapid-response framework concepts for ecological safety." }
+            cardamom: { 
+                title: "Cardamom Cleaning & Processing Machine", 
+                role: "B.Tech Final Year Project (Amal Jyothi College)", 
+                desc: "Conducted field research through live interviews with farmers, store workers, and research center experts. Designed a portable, continuous-type auger mechanism optimized for minimal water consumption and high cleaning efficiency.", 
+                impact: "Successfully translated field-interview data into parametric CAD assemblies; achieved a portable, continuous-auger architecture that reduced water consumption while preserving seed integrity and minimizing husk damage." 
+            },
+            steaming: { 
+                title: "Semi-Automatic Steaming & Folding Machine", 
+                role: "Diploma Capstone Project", 
+                desc: "Engineered a mechanical system to automate garment steaming and folding processes from conceptual sketches to physical workshop fabrication.", 
+                impact: "Delivered a fully operational physical prototype from scratch, integrating mechanical linkages and steam channels that reduced manual cycle time and standardized folding geometry." 
+            },
+            gokart: { 
+                title: "11th Go-Kart Design Challenge (GKDC)", 
+                role: "National Participant — Chassis & Systems", 
+                desc: "Designed and evaluated chassis structural integrity and steering geometry under high dynamic loads for national track competition.", 
+                impact: "Passed all rigorous technical inspection rounds at the national level; optimized the tubular space-frame chassis for high torsional rigidity while keeping vehicle weight minimal." 
+            },
+            sevc: { 
+                title: "Sustainable Electric Vehicle Challenge (SEVC 2025)", 
+                role: "National Participant — EV Powertrain & Packaging", 
+                desc: "Focused on eco-friendly electric vehicle structural packaging, lightweight material selection, and drivetrain efficiency.", 
+                impact: "Designed an optimized EV component packaging layout ensuring strict clearance tolerances, thermal management efficiency, and compliance with national collegiate EV safety rules." 
+            },
+            nasa: { 
+                title: "Forest-Fire Monitoring System", 
+                role: "NASA Space Apps Challenge Contributor", 
+                desc: "Developed system workflow architectures for early detection and rapid logistical response to forest fires using satellite data concepts.", 
+                impact: "Architected a scalable rapid-response workflow framework bridging data streams with tactical ground-unit deployment strategies, recognized for high viability in disaster mitigation." 
+            },
+            sih: { 
+                title: "Smart India Hackathon 2024", 
+                role: "Technical Volunteer", 
+                desc: "Assisted national innovation teams with technical coordination, logistics, and troubleshooting during SIH 2024.", 
+                impact: "Ensured seamless logistical and technical support for multi-disciplinary hardware-software finalist teams, maintaining smooth operations across evaluation hubs during the national event." 
+            }
         };
+
         function openModal(key) {
             const d = caseStudyData[key]; if (!d) return;
             document.getElementById('modalContent').innerHTML = `

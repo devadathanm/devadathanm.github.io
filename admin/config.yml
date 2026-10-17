@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: devadathanm/devadathanm.github.io
+  name: git-gateway
   branch: main
 
 media_folder: "images"
