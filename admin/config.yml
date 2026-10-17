@@ -3,16 +3,16 @@ backend:
   repo: devadathanm/devadathanm.github.io
   branch: main
   client_id: "Ov23liCySMbQ0YdWMk26"
+  base_url: https://api.github.com
 
 media_folder: "images"
 public_folder: "/images"
 
-# Automatic image compression and dimension constraints for uploads
 media_processing:
   image_compression:
-    max_file_size: 1048576 # Limits image weight to approx 1MB to prevent repository bloat
+    max_file_size: 1048576
     resize:
-      width: 1600          # Automatically scales down overly massive widescreen photos
+      width: 1600
       height: 1600
       fit: inside
 
