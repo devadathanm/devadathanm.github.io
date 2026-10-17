@@ -1,14 +1,15 @@
 backend:
-  name: git-gateway
-  branch: main # or master depending on your default branch
+  name: github
+  repo: devadathanm/devadathanm.github.io
+  branch: main
 
-media_folder: "images" # Folder where uploaded project images will be stored
+media_folder: "images"
 public_folder: "/images"
 
 collections:
   - name: "projects"
     label: "Projects"
-    folder: "_content/projects" # Folder where your markdown project files will be stored
+    folder: "_content/projects"
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}

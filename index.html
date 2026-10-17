@@ -74,12 +74,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* 3D Tilt Card Base Style */
-        .tilt-card {
-            transition: transform 0.15s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
-            transform-style: preserve-3d;
-        }
     </style>
 </head>
 <body class="bg-pitch text-gray-300 relative bg-grain min-h-screen selection:bg-emerald-500 selection:text-black">
@@ -117,12 +111,12 @@
         </div>
     </header>
 
-    <!-- Hero / About Section -->
+    <!-- Hero / About Section (Completely Static & Clean - No Tilt) -->
     <section id="about" class="pt-32 pb-20 px-6 relative z-10">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <!-- Main Narrative Card with 3D Tilt Effect & Reveal -->
-                <div class="lg:col-span-8 bg-slateCard border border-titaniumBorder rounded-[3rem] p-8 md:p-12 relative overflow-hidden shadow-2xl tilt-card reveal group" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                <!-- Main Narrative Card -->
+                <div class="lg:col-span-8 bg-slateCard border border-titaniumBorder rounded-[3rem] p-8 md:p-12 relative overflow-hidden shadow-2xl reveal group">
                     <!-- Ambient Glow Background Graphics -->
                     <div class="absolute -right-20 -top-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl glow-effect pointer-events-none"></div>
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-500/[0.02] to-transparent pointer-events-none animate-scan"></div>
@@ -150,10 +144,10 @@
                     </div>
                 </div>
 
-                <!-- Right Column Professional Cards (Option B) -->
+                <!-- Right Column Professional Cards (No Tilt) -->
                 <div class="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
                     <!-- Card 1: Track Record -->
-                    <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-6 flex items-center space-x-5 tilt-card reveal group hover:border-emerald-500/50 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] transition-all relative overflow-hidden" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                    <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-6 flex items-center space-x-5 reveal group hover:border-emerald-500/50 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] transition-all relative overflow-hidden">
                         <div class="absolute right-0 top-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/15 transition-colors pointer-events-none"></div>
                         <div class="w-16 h-16 rounded-2xl bg-titaniumBorder/40 border border-titaniumBorder flex items-center justify-center flex-shrink-0 text-white group-hover:border-emerald-500/50 transition-colors">
                             <i class="fa-solid fa-compass-drafting text-xl text-emerald-400"></i>
@@ -165,8 +159,8 @@
                         </div>
                     </div>
 
-                    <!-- Card 2: Software Suite (Core Highlights) -->
-                    <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-6 flex items-center space-x-5 tilt-card reveal group hover:border-emerald-500/50 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] transition-all relative overflow-hidden" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                    <!-- Card 2: Software Suite -->
+                    <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-6 flex items-center space-x-5 reveal group hover:border-emerald-500/50 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] transition-all relative overflow-hidden">
                         <div class="absolute right-0 top-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/15 transition-colors pointer-events-none"></div>
                         <div class="w-16 h-16 rounded-2xl bg-titaniumBorder/40 border border-titaniumBorder flex items-center justify-center flex-shrink-0 text-white group-hover:border-emerald-500/50 transition-colors">
                             <i class="fa-solid fa-layer-group text-xl text-emerald-400"></i>
@@ -190,7 +184,7 @@
                 <h2 class="text-2xl md:text-4xl font-bold text-white">Mechanical Experience</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 flex flex-col justify-between tilt-card reveal hover:border-gray-500 transition-all" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 flex flex-col justify-between reveal hover:border-gray-500 transition-all">
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">Training & Mentorship</span>
@@ -204,7 +198,7 @@
                     </div>
                     <span class="text-[10px] text-gray-500 mono-text">Kottayam, Kerala</span>
                 </div>
-                <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 flex flex-col justify-between tilt-card reveal hover:border-gray-500 transition-all" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 flex flex-col justify-between reveal hover:border-gray-500 transition-all">
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">R&D / Prototyping</span>
@@ -236,166 +230,111 @@
                 <!-- SOLIDWORKS -->
                 <div onmouseenter="highlightProject('solidworks')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                     <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
-                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
-                        </svg>
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
                         <i class="fa-solid fa-cube text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
                     </div>
                     <span>SOLIDWORKS</span>
                 </div>
-
                 <!-- CATIA V5 -->
                 <div onmouseenter="highlightProject('catia')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                     <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
-                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
-                        </svg>
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
                         <i class="fa-solid fa-draw-polygon text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
                     </div>
                     <span>CATIA V5</span>
                 </div>
-
                 <!-- Autodesk Fusion 360 -->
                 <div onmouseenter="highlightProject('fusion')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                     <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
-                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
-                        </svg>
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
                         <i class="fa-solid fa-layer-group text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
                     </div>
                     <span>Autodesk Fusion 360</span>
                 </div>
-
                 <!-- ANSYS Simulation -->
                 <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                     <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
-                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
-                        </svg>
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
                         <i class="fa-solid fa-chart-line text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
                     </div>
                     <span>ANSYS Simulation</span>
                 </div>
-
                 <!-- Mastercam -->
                 <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                     <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
-                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
-                        </svg>
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
                         <i class="fa-solid fa-gears text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
                     </div>
                     <span>Mastercam</span>
                 </div>
-
                 <!-- AutoCAD & Mechanical -->
                 <div onmouseenter="highlightProject('autocad')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                     <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
-                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
-                        </svg>
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
                         <i class="fa-solid fa-pen-ruler text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
                     </div>
                     <span>AutoCAD & AutoCAD Mechanical</span>
                 </div>
-
                 <!-- Revit MEP -->
                 <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                     <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
-                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
-                        </svg>
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
                         <i class="fa-solid fa-building text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
                     </div>
                     <span>Revit MEP</span>
                 </div>
-
                 <!-- Bentley MicroStation -->
                 <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                     <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
-                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
-                        </svg>
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
                         <i class="fa-solid fa-compass text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
                     </div>
                     <span>Bentley MicroStation</span>
                 </div>
-
                 <!-- Viscom / Rendering -->
                 <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                     <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
-                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
-                        </svg>
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
                         <i class="fa-solid fa-palette text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
                     </div>
                     <span>Viscom / Rendering</span>
                 </div>
-
                 <!-- Adobe Sketchbook -->
                 <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                     <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
-                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
-                        </svg>
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
                         <i class="fa-solid fa-pencil text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
                     </div>
                     <span>Adobe Sketchbook</span>
                 </div>
-
                 <!-- Canva -->
                 <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                     <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
-                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
-                        </svg>
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
                         <i class="fa-solid fa-wand-magic-sparkles text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
                     </div>
                     <span>Canva</span>
                 </div>
-
                 <!-- Microsoft Excel -->
                 <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                     <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
-                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
-                        </svg>
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
                         <i class="fa-solid fa-table text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
                     </div>
                     <span>Microsoft Excel</span>
                 </div>
-
                 <!-- GD&T -->
                 <div onmouseenter="highlightProject('gdt')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                     <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
-                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
-                        </svg>
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
                         <i class="fa-solid fa-ruler-combined text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
                     </div>
                     <span>GD&T & ASME Standards</span>
                 </div>
-
                 <!-- DFM / DFA -->
                 <div onmouseenter="highlightProject('dfm')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                     <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
-                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
-                        </svg>
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/><circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/></svg>
                         <i class="fa-solid fa-wrench text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
                     </div>
                     <span>DFM / DFA Prototyping</span>
@@ -412,7 +351,7 @@
                 <h2 class="text-2xl md:text-4xl font-bold text-white">Project Case Studies & Competitions</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div id="proj-cardamom" data-tags="solidworks dfm fusion" class="project-card bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 transition-all duration-300 hover:border-emerald-500 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] flex flex-col justify-between tilt-card reveal" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                <div id="proj-cardamom" data-tags="solidworks dfm fusion" class="project-card bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 transition-all duration-300 hover:border-emerald-500 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] flex flex-col justify-between reveal">
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">Agrowtein R&D</span>
@@ -427,7 +366,7 @@
                         Explore Case Study
                     </button>
                 </div>
-                <div id="proj-steaming" data-tags="solidworks dfm" class="project-card bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 transition-all duration-300 hover:border-emerald-500 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] flex flex-col justify-between tilt-card reveal" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                <div id="proj-steaming" data-tags="solidworks dfm" class="project-card bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 transition-all duration-300 hover:border-emerald-500 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] flex flex-col justify-between reveal">
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">Prototyping</span>
@@ -442,7 +381,7 @@
                         Explore Case Study
                     </button>
                 </div>
-                <div id="proj-gokart" data-tags="catia gdt" class="project-card bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 transition-all duration-300 hover:border-emerald-500 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] flex flex-col justify-between tilt-card reveal" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                <div id="proj-gokart" data-tags="catia gdt" class="project-card bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 transition-all duration-300 hover:border-emerald-500 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] flex flex-col justify-between reveal">
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">National Competition</span>
@@ -457,7 +396,7 @@
                         Explore Case Study
                     </button>
                 </div>
-                <div id="proj-nasa" data-tags="fusion solidworks" class="project-card bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 transition-all duration-300 hover:border-emerald-500 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] flex flex-col justify-between tilt-card reveal" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                <div id="proj-nasa" data-tags="fusion solidworks" class="project-card bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 transition-all duration-300 hover:border-emerald-500 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] flex flex-col justify-between reveal">
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">Global Hackathon</span>
@@ -484,13 +423,13 @@
                 <h2 class="text-2xl md:text-3xl font-bold text-white">Education & Industrial Training</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 tilt-card reveal hover:border-gray-500 transition-all" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 reveal hover:border-gray-500 transition-all">
                     <i class="fa-solid fa-graduation-cap text-emerald-400 text-xl mb-4"></i>
                     <h4 class="text-lg font-bold text-white mb-1">B.Tech in Mechanical Engineering</h4>
                     <p class="text-xs text-gray-400 mb-2">Amal Jyothi College of Engineering and Technology (Autonomous)</p>
                     <span class="text-[10px] text-gray-500 mono-text">2022 - 2025</span>
                 </div>
-                <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 tilt-card reveal hover:border-gray-500 transition-all" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 reveal hover:border-gray-500 transition-all">
                     <i class="fa-solid fa-ship text-emerald-400 text-xl mb-4"></i>
                     <h4 class="text-lg font-bold text-white mb-1">Cochin Shipyard Ltd. Training</h4>
                     <p class="text-xs text-gray-400 mb-2">Marine & Heavy Engineering Internship</p>
@@ -503,7 +442,7 @@
     <!-- Contact Section -->
     <section id="contact" class="py-20 px-6 relative z-10 border-t border-titaniumBorder/40">
         <div class="max-w-7xl mx-auto">
-            <div class="bg-slateCard border border-titaniumBorder rounded-[3rem] p-8 md:p-14 relative overflow-hidden shadow-2xl tilt-card reveal" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+            <div class="bg-slateCard border border-titaniumBorder rounded-[3rem] p-8 md:p-14 relative overflow-hidden shadow-2xl reveal">
                 <div class="absolute right-0 bottom-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
                     <div class="lg:col-span-7">
@@ -525,7 +464,6 @@
                     </div>
                     
                     <div class="lg:col-span-5 space-y-4">
-                        <!-- Direct Mailto Action Card -->
                         <a href="mailto:9497534004devan@gmail.com" class="p-6 rounded-2xl bg-pitch border border-titaniumBorder flex items-center justify-between hover:border-emerald-500 transition-all group block shadow-md">
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 rounded-xl bg-titaniumBorder/40 border border-titaniumBorder flex items-center justify-center text-emerald-400 flex-shrink-0 group-hover:bg-emerald-500/15 transition-colors">
@@ -542,7 +480,6 @@
                             <i class="fa-solid fa-arrow-up-right-from-square text-xs text-gray-500 group-hover:text-emerald-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
                         </a>
 
-                        <!-- LinkedIn Action Card -->
                         <a href="https://www.linkedin.com/in/devadathanm" target="_blank" class="p-6 rounded-2xl bg-pitch border border-titaniumBorder flex items-center justify-between hover:border-sky-500 transition-all group block shadow-md">
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 rounded-xl bg-titaniumBorder/40 border border-titaniumBorder flex items-center justify-center text-sky-400 flex-shrink-0 group-hover:bg-sky-500/15 transition-colors">
@@ -556,7 +493,6 @@
                             <i class="fa-solid fa-arrow-up-right-from-square text-xs text-gray-500 group-hover:text-sky-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
                         </a>
 
-                        <!-- Location Card -->
                         <div class="p-6 rounded-2xl bg-pitch border border-titaniumBorder flex items-center space-x-4 shadow-md">
                             <div class="w-12 h-12 rounded-xl bg-titaniumBorder/40 border border-titaniumBorder flex items-center justify-center text-emerald-400 flex-shrink-0">
                                 <i class="fa-solid fa-location-dot text-lg"></i>
@@ -611,7 +547,6 @@
     </footer>
 
     <script>
-        // Scroll Reveal Intersection Observer for Smooth Fade-In Animations
         const revealObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -624,7 +559,6 @@
             revealObserver.observe(el);
         });
 
-        // Interactive Mouse-Reactive Particle Network Canvas
         const canvas = document.getElementById('particleCanvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
@@ -673,12 +607,9 @@
 
         function animateParticles() { 
             ctx.clearRect(0, 0, canvas.width, canvas.height); 
-            
             for (let i = 0; i < particles.length; i++) {
                 particles[i].update();
                 particles[i].draw();
-
-                // Connect particles near cursor with glowing laser lines
                 if (mouse.x !== null && mouse.y !== null) {
                     let dx = mouse.x - particles[i].x;
                     let dy = mouse.y - particles[i].y;
@@ -697,24 +628,6 @@
         }
         animateParticles();
 
-        // 3D Card Tilt Effect Function
-        function handleTilt(e, card) {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const xc = rect.width / 2;
-            const yc = rect.height / 2;
-            const dx = (x - xc) / xc;
-            const dy = (y - yc) / yc;
-            
-            card.style.transform = `perspective(1000px) rotateY(${dx * 2.5}deg) rotateX(${-dy * 2.5}deg) translateY(-2px)`;
-        }
-
-        function resetTilt(card) {
-            card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0px)';
-        }
-
-        // Project Highlighting & Filtering
         function highlightProject(tag) {
             document.querySelectorAll('.project-card').forEach(card => {
                 if (card.getAttribute('data-tags').includes(tag)) {
@@ -730,7 +643,6 @@
             document.querySelectorAll('.project-card').forEach(card => card.classList.remove('opacity-40', 'border-emerald-500', 'scale-[1.01]', 'shadow-[0_0_30px_rgba(16,185,129,0.2)]')); 
         }
 
-        // Case Study Modals Data
         const caseStudyData = {
             cardamom: { title: "Cardamom Cleaning Machine (Agrowtein)", role: "R&D Mechanical Engineer", desc: "Ran a Design of Experiments (DOE) study to identify key parameters affecting cleaning quality, then designed a specialized mechanism to remove debris while minimizing seed damage.", impact: "Successfully bridged CAD prototyping to a working prototype, eliminating fabrication bottlenecks." },
             steaming: { title: "Semi-Automatic Steaming & Folding Machine", role: "R&D Prototyping Lead", desc: "Designed a semi-automatic mechanism to streamline garment steaming and folding, taking the project from initial concept through a fabricated working prototype.", impact: "Streamlined automated garment handling operations." },
