@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main # or master depending on your default branch
+
+media_folder: "images" # Folder where uploaded project images will be stored
+public_folder: "/images"
+
+collections:
+  - name: "projects"
+    label: "Projects"
+    folder: "_content/projects" # Folder where your markdown project files will be stored
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "date"}
+      - {label: "Category / Tag", name: "category", widget: "string"}
+      - {label: "Role", name: "role", widget: "string"}
+      - {label: "Project Description", name: "description", widget: "text"}
+      - {label: "Key Outcome / Impact", name: "impact", widget: "string"}
+      - {label: "Featured Image", name: "image", widget: "image", required: false}

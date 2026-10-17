@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devadathan M | Mechanical Design & CAD Engineer</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        pitch: '#020203',
+                        slateCard: '#08090c',
+                        titaniumBorder: '#1a1c24'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Decap CMS Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <style>
+        /* Strict text-selection blocking to prevent mouse dragging/highlighting */
+        body { 
+            background-color: #020203; 
+            color: #d1d5db; 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden; 
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .mono-text { font-family: 'JetBrains Mono', monospace; }
+        .radar-ring { stroke-dasharray: 283; stroke-dashoffset: 283; transition: stroke-dashoffset 1.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .group:hover .radar-ring { stroke-dashoffset: 50; }
+        .bg-grain { background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0); background-size: 28px 28px; }
+        
+        /* Advanced Animations & Scanlines */
+        @keyframes scanline {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(1000%); }
+        }
+        .animate-scan { animation: scanline 5s linear infinite; }
+        
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.05); }
+        }
+        .glow-effect { animation: pulseGlow 5s ease-in-out infinite; }
+
+        /* Scroll Reveal Animation Styles */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 3D Tilt Card Base Style */
+        .tilt-card {
+            transition: transform 0.15s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+        }
+    </style>
+</head>
+<body class="bg-pitch text-gray-300 relative bg-grain min-h-screen selection:bg-emerald-500 selection:text-black">
+
+    <!-- Interactive Particle & Cursor Canvas -->
+    <canvas id="particleCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-60"></canvas>
+
+    <!-- Top Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-pitch/80 backdrop-blur-md border-b border-titaniumBorder/50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-9 h-9 rounded-full bg-slateCard border border-titaniumBorder flex items-center justify-center font-bold text-white mono-text text-sm group-hover:border-emerald-500 transition-colors shadow-[0_0_15px_rgba(16,185,129,0.2)]">DM</div>
+                <div>
+                    <span class="block text-sm font-semibold text-white tracking-wide">DEVADATHAN M</span>
+                    <span class="block text-[10px] text-gray-500 uppercase tracking-widest mono-text flex items-center space-x-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>Available for R&D Roles</span>
+                    </span>
+                </div>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 text-xs font-medium uppercase tracking-widest text-gray-400">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+                <a href="#skills" class="hover:text-white transition-colors">Competencies</a>
+                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+                <a href="#education" class="hover:text-white transition-colors">Education</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </nav>
+            <div>
+                <button onclick="toggleCMSModal()" class="px-4 py-2 rounded-full border border-titaniumBorder bg-slateCard hover:bg-titaniumBorder/40 text-xs font-semibold text-white transition-all flex items-center space-x-2 group shadow-lg cursor-pointer">
+                    <i class="fa-solid fa-sliders text-xs text-emerald-400 group-hover:rotate-90 transition-transform"></i>
+                    <span>CMS Admin</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / About Section -->
+    <section id="about" class="pt-32 pb-20 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Main Narrative Card with 3D Tilt Effect & Reveal -->
+                <div class="lg:col-span-8 bg-slateCard border border-titaniumBorder rounded-[3rem] p-8 md:p-12 relative overflow-hidden shadow-2xl tilt-card reveal group" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                    <!-- Ambient Glow Background Graphics -->
+                    <div class="absolute -right-20 -top-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl glow-effect pointer-events-none"></div>
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-500/[0.02] to-transparent pointer-events-none animate-scan"></div>
+                    
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-titaniumBorder/40 border border-titaniumBorder text-gray-300 text-xs mono-text mb-6">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>MECHANICAL DESIGN & R&D ENGINEER</span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight mb-6 leading-tight">
+                        Devadathan M <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-gray-500">Precision Engineering & Prototyping</span>
+                    </h1>
+                    <p class="text-gray-400 text-base md:text-lg max-w-2xl font-normal leading-relaxed mb-8">
+                        Ever since I started modeling parts, I’ve been fascinated by how design choices play out in physical mechanisms. As a mechanical engineer, I focus on R&D, hands-on prototyping, and CAD modeling—while also mentoring others in design tools. I genuinely enjoy the process of seeing an initial concept come together as a fully functional build.
+                    </p>
+                    <div class="flex flex-wrap gap-4 relative z-20">
+                        <a href="devadathanmresumecv.pdf" download class="px-6 py-3.5 rounded-full bg-white text-black text-xs font-bold uppercase tracking-wider hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] flex items-center space-x-2 transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-file-arrow-down text-xs"></i>
+                            <span>Download Resume</span>
+                        </a>
+                        <a href="#contact" class="px-6 py-3.5 rounded-full bg-pitch border border-titaniumBorder text-white text-xs font-bold uppercase tracking-wider hover:border-emerald-500 transition-all flex items-center space-x-2">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>Contact Me</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column Professional Cards (Option B) -->
+                <div class="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+                    <!-- Card 1: Track Record -->
+                    <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-6 flex items-center space-x-5 tilt-card reveal group hover:border-emerald-500/50 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] transition-all relative overflow-hidden" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                        <div class="absolute right-0 top-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/15 transition-colors pointer-events-none"></div>
+                        <div class="w-16 h-16 rounded-2xl bg-titaniumBorder/40 border border-titaniumBorder flex items-center justify-center flex-shrink-0 text-white group-hover:border-emerald-500/50 transition-colors">
+                            <i class="fa-solid fa-compass-drafting text-xl text-emerald-400"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs uppercase text-gray-500 mono-text">Track Record</span>
+                            <span class="block text-sm font-bold text-white mt-1">2+ Years Experience</span>
+                            <span class="block text-xs text-gray-400 mt-0.5">R&D & Technical Instruction</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Software Suite (Core Highlights) -->
+                    <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-6 flex items-center space-x-5 tilt-card reveal group hover:border-emerald-500/50 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] transition-all relative overflow-hidden" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                        <div class="absolute right-0 top-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/15 transition-colors pointer-events-none"></div>
+                        <div class="w-16 h-16 rounded-2xl bg-titaniumBorder/40 border border-titaniumBorder flex items-center justify-center flex-shrink-0 text-white group-hover:border-emerald-500/50 transition-colors">
+                            <i class="fa-solid fa-layer-group text-xl text-emerald-400"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs uppercase text-gray-500 mono-text">Software Suite</span>
+                            <span class="block text-sm font-bold text-white mt-1">CAD, Simulation & Visual Tools</span>
+                            <span class="block text-xs text-gray-400 mt-0.5">SOLIDWORKS, CATIA, ANSYS & More</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section id="experience" class="py-16 px-6 relative z-10 border-t border-titaniumBorder/40">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-12 reveal">
+                <span class="text-xs uppercase tracking-widest text-gray-500 mono-text block mb-2">// Career Timeline</span>
+                <h2 class="text-2xl md:text-4xl font-bold text-white">Mechanical Experience</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 flex flex-col justify-between tilt-card reveal hover:border-gray-500 transition-all" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">Training & Mentorship</span>
+                            <span class="text-xs text-gray-500 mono-text">2025-2026</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">Mechanical Faculty & CAD Trainer</h3>
+                        <p class="text-xs text-gray-400 mb-4">CADD Centre Kottayam</p>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Delivered hands-on CAD training in SOLIDWORKS, CATIA, and AutoCAD. Mentored student design projects from concept through CAD implementation, GD&T application, and fabrication validation.
+                        </p>
+                    </div>
+                    <span class="text-[10px] text-gray-500 mono-text">Kottayam, Kerala</span>
+                </div>
+                <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 flex flex-col justify-between tilt-card reveal hover:border-gray-500 transition-all" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">R&D / Prototyping</span>
+                            <span class="text-xs text-gray-500 mono-text">2024-2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">Mechanical Engineer - R&D</h3>
+                        <p class="text-xs text-gray-400 mb-4">Agrowtein</p>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Developed parametric CAD models and mechanisms for automation agritech equipment. Worked directly with fabricators through prototype build, assembly, and field testing troubleshooting.
+                        </p>
+                    </div>
+                    <span class="text-[10px] text-gray-500 mono-text">Kerala</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engineering Competencies Section (All 13 Tools Included) -->
+    <section id="skills" class="py-16 px-6 relative z-10 border-t border-titaniumBorder/40">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 reveal">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-gray-500 mono-text block mb-2">// Technical Expertise</span>
+                    <h2 class="text-2xl md:text-3xl font-bold text-white">Software Stack & Engineering Capabilities</h2>
+                </div>
+                <p class="text-xs text-gray-400 mt-2 md:mt-0">Hover skill capsules to trigger radar scanning and cross-highlight case studies.</p>
+            </div>
+            <div class="flex flex-wrap gap-3 reveal">
+                <!-- SOLIDWORKS -->
+                <div onmouseenter="highlightProject('solidworks')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
+                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
+                        </svg>
+                        <i class="fa-solid fa-cube text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                    </div>
+                    <span>SOLIDWORKS</span>
+                </div>
+
+                <!-- CATIA V5 -->
+                <div onmouseenter="highlightProject('catia')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
+                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
+                        </svg>
+                        <i class="fa-solid fa-draw-polygon text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                    </div>
+                    <span>CATIA V5</span>
+                </div>
+
+                <!-- Autodesk Fusion 360 -->
+                <div onmouseenter="highlightProject('fusion')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
+                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
+                        </svg>
+                        <i class="fa-solid fa-layer-group text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                    </div>
+                    <span>Autodesk Fusion 360</span>
+                </div>
+
+                <!-- ANSYS Simulation -->
+                <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
+                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
+                        </svg>
+                        <i class="fa-solid fa-chart-line text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                    </div>
+                    <span>ANSYS Simulation</span>
+                </div>
+
+                <!-- Mastercam -->
+                <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
+                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
+                        </svg>
+                        <i class="fa-solid fa-gears text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                    </div>
+                    <span>Mastercam</span>
+                </div>
+
+                <!-- AutoCAD & Mechanical -->
+                <div onmouseenter="highlightProject('autocad')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
+                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
+                        </svg>
+                        <i class="fa-solid fa-pen-ruler text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                    </div>
+                    <span>AutoCAD & AutoCAD Mechanical</span>
+                </div>
+
+                <!-- Revit MEP -->
+                <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
+                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
+                        </svg>
+                        <i class="fa-solid fa-building text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                    </div>
+                    <span>Revit MEP</span>
+                </div>
+
+                <!-- Bentley MicroStation -->
+                <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
+                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
+                        </svg>
+                        <i class="fa-solid fa-compass text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                    </div>
+                    <span>Bentley MicroStation</span>
+                </div>
+
+                <!-- Viscom / Rendering -->
+                <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
+                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
+                        </svg>
+                        <i class="fa-solid fa-palette text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                    </div>
+                    <span>Viscom / Rendering</span>
+                </div>
+
+                <!-- Adobe Sketchbook -->
+                <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
+                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
+                        </svg>
+                        <i class="fa-solid fa-pencil text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                    </div>
+                    <span>Adobe Sketchbook</span>
+                </div>
+
+                <!-- Canva -->
+                <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
+                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
+                        </svg>
+                        <i class="fa-solid fa-wand-magic-sparkles text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                    </div>
+                    <span>Canva</span>
+                </div>
+
+                <!-- Microsoft Excel -->
+                <div class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
+                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
+                        </svg>
+                        <i class="fa-solid fa-table text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                    </div>
+                    <span>Microsoft Excel</span>
+                </div>
+
+                <!-- GD&T -->
+                <div onmouseenter="highlightProject('gdt')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
+                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
+                        </svg>
+                        <i class="fa-solid fa-ruler-combined text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                    </div>
+                    <span>GD&T & ASME Standards</span>
+                </div>
+
+                <!-- DFM / DFA -->
+                <div onmouseenter="highlightProject('dfm')" onmouseleave="resetHighlight()" class="px-5 py-3 rounded-full bg-slateCard border border-titaniumBorder hover:border-emerald-500 text-gray-300 hover:text-white text-xs font-medium tracking-wide transition-all cursor-pointer flex items-center space-x-3 group hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                    <div class="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" stroke="#1a1c24" stroke-width="12" fill="transparent"/>
+                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="12" fill="transparent" class="radar-ring" stroke-dashoffset="100"/>
+                        </svg>
+                        <i class="fa-solid fa-wrench text-[10px] text-gray-400 group-hover:text-emerald-400 absolute"></i>
+                    </div>
+                    <span>DFM / DFA Prototyping</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engineering Projects Section -->
+    <section id="projects" class="py-16 px-6 relative z-10 border-t border-titaniumBorder/40">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-12 reveal">
+                <span class="text-xs uppercase tracking-widest text-gray-500 mono-text block mb-2">// Featured Deliverables</span>
+                <h2 class="text-2xl md:text-4xl font-bold text-white">Project Case Studies & Competitions</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div id="proj-cardamom" data-tags="solidworks dfm fusion" class="project-card bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 transition-all duration-300 hover:border-emerald-500 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] flex flex-col justify-between tilt-card reveal" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">Agrowtein R&D</span>
+                            <span class="text-xs text-gray-500 mono-text">2024-2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Cardamom Cleaning Machine</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Conducted a Design of Experiments (DOE) study to identify cleaning parameters, designing a specialized mechanism to remove debris while minimizing seed damage.
+                        </p>
+                    </div>
+                    <button onclick="openModal('cardamom')" class="w-full py-3 rounded-full bg-titaniumBorder/40 hover:bg-white hover:text-black text-white text-xs font-semibold uppercase tracking-wider transition-all border border-titaniumBorder cursor-pointer">
+                        Explore Case Study
+                    </button>
+                </div>
+                <div id="proj-steaming" data-tags="solidworks dfm" class="project-card bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 transition-all duration-300 hover:border-emerald-500 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] flex flex-col justify-between tilt-card reveal" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">Prototyping</span>
+                            <span class="text-xs text-gray-500 mono-text">Agrowtein</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Semi-Automatic Steaming & Folding Machine</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Designed a semi-automatic mechanism to streamline garment steaming and folding, taking the project from initial concept through a fabricated working prototype.
+                        </p>
+                    </div>
+                    <button onclick="openModal('steaming')" class="w-full py-3 rounded-full bg-titaniumBorder/40 hover:bg-white hover:text-black text-white text-xs font-semibold uppercase tracking-wider transition-all border border-titaniumBorder cursor-pointer">
+                        Explore Case Study
+                    </button>
+                </div>
+                <div id="proj-gokart" data-tags="catia gdt" class="project-card bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 transition-all duration-300 hover:border-emerald-500 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] flex flex-col justify-between tilt-card reveal" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">National Competition</span>
+                            <span class="text-xs text-gray-500 mono-text">Go-Kart Challenge</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">11th Go-Kart Design Challenge</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Contributed to chassis structure, steering geometry, and braking-system design, as well as hands-on fabrication and dynamic track testing.
+                        </p>
+                    </div>
+                    <button onclick="openModal('gokart')" class="w-full py-3 rounded-full bg-titaniumBorder/40 hover:bg-white hover:text-black text-white text-xs font-semibold uppercase tracking-wider transition-all border border-titaniumBorder cursor-pointer">
+                        Explore Case Study
+                    </button>
+                </div>
+                <div id="proj-nasa" data-tags="fusion solidworks" class="project-card bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 transition-all duration-300 hover:border-emerald-500 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] flex flex-col justify-between tilt-card reveal" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">Global Hackathon</span>
+                            <span class="text-xs text-gray-500 mono-text">NASA Space Apps</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Forest-Fire Monitoring System</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Contributed system-workflow design for a forest-fire monitoring and rapid-response concept.
+                        </p>
+                    </div>
+                    <button onclick="openModal('nasa')" class="w-full py-3 rounded-full bg-titaniumBorder/40 hover:bg-white hover:text-black text-white text-xs font-semibold uppercase tracking-wider transition-all border border-titaniumBorder cursor-pointer">
+                        Explore Case Study
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Training Section -->
+    <section id="education" class="py-16 px-6 relative z-10 border-t border-titaniumBorder/40">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-10 reveal">
+                <span class="text-xs uppercase tracking-widest text-gray-500 mono-text block mb-2">// Academic Background</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-white">Education & Industrial Training</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 tilt-card reveal hover:border-gray-500 transition-all" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                    <i class="fa-solid fa-graduation-cap text-emerald-400 text-xl mb-4"></i>
+                    <h4 class="text-lg font-bold text-white mb-1">B.Tech in Mechanical Engineering</h4>
+                    <p class="text-xs text-gray-400 mb-2">Amal Jyothi College of Engineering and Technology (Autonomous)</p>
+                    <span class="text-[10px] text-gray-500 mono-text">2022 - 2025</span>
+                </div>
+                <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 tilt-card reveal hover:border-gray-500 transition-all" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                    <i class="fa-solid fa-ship text-emerald-400 text-xl mb-4"></i>
+                    <h4 class="text-lg font-bold text-white mb-1">Cochin Shipyard Ltd. Training</h4>
+                    <p class="text-xs text-gray-400 mb-2">Marine & Heavy Engineering Internship</p>
+                    <span class="text-[10px] text-gray-500 mono-text">Ship construction, large-scale fabrication, dockyard ops</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 relative z-10 border-t border-titaniumBorder/40">
+        <div class="max-w-7xl mx-auto">
+            <div class="bg-slateCard border border-titaniumBorder rounded-[3rem] p-8 md:p-14 relative overflow-hidden shadow-2xl tilt-card reveal" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                <div class="absolute right-0 bottom-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+                    <div class="lg:col-span-7">
+                        <span class="text-xs uppercase tracking-widest text-gray-500 mono-text block mb-2">// Get In Touch</span>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-4">Let's build something precise.</h2>
+                        <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-8">
+                            Whether you have an R&D mechanical design challenge, CAD modeling project, or engineering opportunity, feel free to reach out.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://wa.me/919497534004?text=Hi%20Devadathan,%20I%20saw%20your%20portfolio..." target="_blank" class="px-6 py-3.5 rounded-full bg-emerald-500 text-black text-xs font-bold uppercase tracking-wider hover:bg-emerald-400 transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] flex items-center space-x-2">
+                                <i class="fa-brands fa-whatsapp text-sm"></i>
+                                <span>Chat on WhatsApp</span>
+                            </a>
+                            <a href="devadathanmresumecv.pdf" download class="px-6 py-3.5 rounded-full bg-pitch border border-titaniumBorder text-white text-xs font-bold uppercase tracking-wider hover:border-gray-500 transition-all flex items-center space-x-2">
+                                <i class="fa-solid fa-file-arrow-down text-xs"></i>
+                                <span>Download Resume</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:col-span-5 space-y-4">
+                        <!-- Direct Mailto Action Card -->
+                        <a href="mailto:9497534004devan@gmail.com" class="p-6 rounded-2xl bg-pitch border border-titaniumBorder flex items-center justify-between hover:border-emerald-500 transition-all group block shadow-md">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-titaniumBorder/40 border border-titaniumBorder flex items-center justify-center text-emerald-400 flex-shrink-0 group-hover:bg-emerald-500/15 transition-colors">
+                                    <i class="fa-regular fa-paper-plane text-lg"></i>
+                                </div>
+                                <div>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="block text-[10px] uppercase text-gray-500 mono-text">Direct Inbox</span>
+                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    </div>
+                                    <span class="text-sm font-semibold text-white group-hover:text-emerald-400 transition-colors block">Send Email Message</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-gray-500 group-hover:text-emerald-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                        </a>
+
+                        <!-- LinkedIn Action Card -->
+                        <a href="https://www.linkedin.com/in/devadathanm" target="_blank" class="p-6 rounded-2xl bg-pitch border border-titaniumBorder flex items-center justify-between hover:border-sky-500 transition-all group block shadow-md">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-titaniumBorder/40 border border-titaniumBorder flex items-center justify-center text-sky-400 flex-shrink-0 group-hover:bg-sky-500/15 transition-colors">
+                                    <i class="fa-brands fa-linkedin-in text-lg"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-[10px] uppercase text-gray-500 mono-text">Professional Network</span>
+                                    <span class="text-sm font-semibold text-white group-hover:text-sky-400 transition-colors block">Connect on LinkedIn</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-gray-500 group-hover:text-sky-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                        </a>
+
+                        <!-- Location Card -->
+                        <div class="p-6 rounded-2xl bg-pitch border border-titaniumBorder flex items-center space-x-4 shadow-md">
+                            <div class="w-12 h-12 rounded-xl bg-titaniumBorder/40 border border-titaniumBorder flex items-center justify-center text-emerald-400 flex-shrink-0">
+                                <i class="fa-solid fa-location-dot text-lg"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] uppercase text-gray-500 mono-text">Location Base</span>
+                                <span class="text-sm font-semibold text-white">Kottayam, Kerala, India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Modal -->
+    <div id="caseStudyModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] max-w-2xl w-full p-8 relative max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-6 right-6 w-8 h-8 rounded-full bg-titaniumBorder text-white flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- CMS Modal -->
+    <div id="cmsModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] max-w-lg w-full p-8 relative shadow-2xl">
+            <button onclick="toggleCMSModal()" class="absolute top-6 right-6 w-8 h-8 rounded-full bg-titaniumBorder text-white flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center">
+                <div class="w-12 h-12 rounded-full bg-titaniumBorder/50 border border-titaniumBorder flex items-center justify-center mx-auto mb-4 text-emerald-400">
+                    <i class="fa-solid fa-sliders"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Decap CMS Integration</h3>
+                <p class="text-xs text-gray-400 mb-6">Accessing <code class="text-white bg-pitch px-2 py-1 rounded">/admin</code> launches your zero-code editor.</p>
+                <a href="/admin" class="block w-full py-3 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider hover:bg-gray-200 transition-all">Launch CMS Admin Dashboard (/admin)</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-12 px-6 border-t border-titaniumBorder/40 text-center relative z-10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
+            <p class="text-xs text-gray-500">&copy; 2026 Devadathan M. Built with Architectural Precision.</p>
+            <div class="flex items-center space-x-6 mt-4 md:mt-0 text-sm text-gray-400">
+                <a href="https://github.com/devadathanm" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/devadathanm" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="mailto:9497534004devan@gmail.com" class="hover:text-white transition-colors"><i class="fa-regular fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Reveal Intersection Observer for Smooth Fade-In Animations
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Interactive Mouse-Reactive Particle Network Canvas
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouse = { x: null, y: null, radius: 150 };
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        window.addEventListener('mouseout', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        function resizeCanvas() { 
+            canvas.width = window.innerWidth; 
+            canvas.height = window.innerHeight; 
+        }
+        window.addEventListener('resize', resizeCanvas); 
+        resizeCanvas();
+
+        class Particle {
+            constructor() { 
+                this.x = Math.random() * canvas.width; 
+                this.y = Math.random() * canvas.height; 
+                this.vx = (Math.random() - 0.5) * 0.5; 
+                this.vy = (Math.random() - 0.5) * 0.5; 
+                this.radius = Math.random() * 1.5 + 0.8; 
+            }
+            update() { 
+                this.x += this.vx; 
+                this.y += this.vy; 
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1; 
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1; 
+            }
+            draw() { 
+                ctx.beginPath(); 
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2); 
+                ctx.fillStyle = 'rgba(16, 185, 129, 0.35)'; 
+                ctx.fill(); 
+            }
+        }
+
+        for (let i = 0; i < 55; i++) particles.push(new Particle());
+
+        function animateParticles() { 
+            ctx.clearRect(0, 0, canvas.width, canvas.height); 
+            
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                // Connect particles near cursor with glowing laser lines
+                if (mouse.x !== null && mouse.y !== null) {
+                    let dx = mouse.x - particles[i].x;
+                    let dy = mouse.y - particles[i].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < mouse.radius) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(16, 185, 129, ${0.25 * (1 - distance / mouse.radius)})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles); 
+        }
+        animateParticles();
+
+        // 3D Card Tilt Effect Function
+        function handleTilt(e, card) {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const xc = rect.width / 2;
+            const yc = rect.height / 2;
+            const dx = (x - xc) / xc;
+            const dy = (y - yc) / yc;
+            
+            card.style.transform = `perspective(1000px) rotateY(${dx * 2.5}deg) rotateX(${-dy * 2.5}deg) translateY(-2px)`;
+        }
+
+        function resetTilt(card) {
+            card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0px)';
+        }
+
+        // Project Highlighting & Filtering
+        function highlightProject(tag) {
+            document.querySelectorAll('.project-card').forEach(card => {
+                if (card.getAttribute('data-tags').includes(tag)) {
+                    card.classList.add('border-emerald-500', 'scale-[1.01]', 'shadow-[0_0_30px_rgba(16,185,129,0.2)]'); 
+                    card.classList.remove('opacity-40');
+                } else { 
+                    card.classList.add('opacity-40'); 
+                    card.classList.remove('border-emerald-500', 'scale-[1.01]', 'shadow-[0_0_30px_rgba(16,185,129,0.2)]'); 
+                }
+            });
+        }
+        function resetHighlight() { 
+            document.querySelectorAll('.project-card').forEach(card => card.classList.remove('opacity-40', 'border-emerald-500', 'scale-[1.01]', 'shadow-[0_0_30px_rgba(16,185,129,0.2)]')); 
+        }
+
+        // Case Study Modals Data
+        const caseStudyData = {
+            cardamom: { title: "Cardamom Cleaning Machine (Agrowtein)", role: "R&D Mechanical Engineer", desc: "Ran a Design of Experiments (DOE) study to identify key parameters affecting cleaning quality, then designed a specialized mechanism to remove debris while minimizing seed damage.", impact: "Successfully bridged CAD prototyping to a working prototype, eliminating fabrication bottlenecks." },
+            steaming: { title: "Semi-Automatic Steaming & Folding Machine", role: "R&D Prototyping Lead", desc: "Designed a semi-automatic mechanism to streamline garment steaming and folding, taking the project from initial concept through a fabricated working prototype.", impact: "Streamlined automated garment handling operations." },
+            gokart: { title: "11th Go-Kart Design Challenge", role: "Chassis & Systems Designer", desc: "Contributed to chassis structure, steering geometry, and braking-system design, as well as hands-on fabrication and dynamic testing.", impact: "Successfully built and dynamically tested high-performance chassis on-track." },
+            nasa: { title: "NASA Space Apps Challenge", role: "Workflow Systems Designer", desc: "Contributed system-workflow design for a forest-fire monitoring and rapid-response concept.", impact: "Developed rapid-response framework concepts for ecological safety." }
+        };
+        function openModal(key) {
+            const d = caseStudyData[key]; if (!d) return;
+            document.getElementById('modalContent').innerHTML = `
+                <span class="text-xs uppercase tracking-widest text-gray-500 mono-text block mb-2">// Technical Deep-Dive</span>
+                <h3 class="text-2xl font-bold text-white mb-2">${d.title}</h3>
+                <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-titaniumBorder text-gray-300 mb-6">${d.role}</span>
+                <p class="text-gray-300 text-sm leading-relaxed mb-6">${d.desc}</p>
+                <div class="p-4 rounded-2xl bg-pitch border border-titaniumBorder"><span class="block text-xs font-bold text-white uppercase mb-1">Key Outcome</span><span class="text-xs text-gray-400">${d.impact}</span></div>`;
+            document.getElementById('caseStudyModal').classList.remove('hidden');
+        }
+        function closeModal() { document.getElementById('caseStudyModal').classList.add('hidden'); }
+        function toggleCMSModal() { document.getElementById('cmsModal').classList.toggle('hidden'); }
+    </script>
+</body>
+</html>
