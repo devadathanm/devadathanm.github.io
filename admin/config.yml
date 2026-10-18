@@ -2,8 +2,6 @@ backend:
   name: github
   repo: devadathanm/devadathanm.github.io
   branch: main
-  client_id: "Ov23liCySMbQ0YdWMk26"
-  auth_type: implicit
 
 media_folder: "images"
 public_folder: "/images"
