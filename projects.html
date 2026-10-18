@@ -55,10 +55,10 @@
         <div class="mb-12">
             <span class="text-xs uppercase tracking-widest text-emerald-400 mono-text block mb-2">// Complete Archive</span>
             <h1 class="text-3xl md:text-5xl font-bold text-white tracking-tight">Project Case Studies & Competitions</h1>
-            <p class="text-gray-400 text-sm mt-3 max-w-2xl">Explore detailed breakdowns of mechanical design systems, prototyping builds, national-level collegiate challenges, and CMS updates.</p>
+            <p class="text-gray-400 text-sm mt-3 max-w-2xl">Explore detailed breakdowns of mechanical design systems, prototyping builds, national collegiate challenges, hackathons, and CMS updates.</p>
         </div>
 
-        <!-- Grid Container: Hardcoded Core 4 + CMS Dynamic Additions -->
+        <!-- Grid Container: All Core Projects + CMS Dynamic Additions -->
         <div id="projects-archive-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
             
             <!-- Project 1: Cardamom Cleaning Machine -->
@@ -125,6 +125,38 @@
                 </div>
             </div>
 
+            <!-- Project 5: Forest-Fire Monitoring System (NASA Space Apps) -->
+            <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 flex flex-col justify-between hover:border-emerald-500/50 transition-all">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">Global Hackathon</span>
+                        <span class="text-xs text-gray-500 mono-text">NASA Space Apps</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Forest-Fire Monitoring System</h3>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Developed system workflow architectures and rapid logistical response frameworks for early detection of forest fires using satellite data concepts.</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-pitch border border-titaniumBorder">
+                    <strong class="text-xs font-bold text-emerald-400 uppercase block mb-1">Key Impact</strong>
+                    <span class="text-xs text-gray-300">Created a scalable disaster mitigation model bridging data streams with tactical ground-unit deployment.</span>
+                </div>
+            </div>
+
+            <!-- Project 6: Smart India Hackathon (SIH 2024) -->
+            <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 flex flex-col justify-between hover:border-emerald-500/50 transition-all">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">National Innovation</span>
+                        <span class="text-xs text-gray-500 mono-text">SIH 2024</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Smart India Hackathon (Technical Volunteer)</h3>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Assisted national innovation teams with technical coordination, logistics, troubleshooting, and hardware-software integration support during SIH 2024.</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-pitch border border-titaniumBorder">
+                    <strong class="text-xs font-bold text-emerald-400 uppercase block mb-1">Key Impact</strong>
+                    <span class="text-xs text-gray-300">Ensured seamless execution and troubleshooting across finalist evaluation hubs during the national event.</span>
+                </div>
+            </div>
+
         </div>
     </main>
 
@@ -164,8 +196,11 @@
                             const bodyContent = markdownText.replace(/^---[\s\S]*?---/, '').trim();
 
                             let imagePath = data.image || '';
-                            if (imagePath && !imagePath.startsWith('http') && !imagePath.startsWith('/')) {
-                                imagePath = '/' + imagePath;
+                            if (imagePath) {
+                                imagePath = imagePath.replace(/['"]+/g, '').trim();
+                                if (!imagePath.startsWith('http') && !imagePath.startsWith('/')) {
+                                    imagePath = '/' + imagePath;
+                                }
                             }
 
                             const cardHTML = `
