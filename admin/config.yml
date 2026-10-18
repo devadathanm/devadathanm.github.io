@@ -8,14 +8,6 @@ backend:
 media_folder: "images"
 public_folder: "/images"
 
-media_processing:
-  image_compression:
-    max_file_size: 1048576
-    resize:
-      width: 1600
-      height: 1600
-      fit: inside
-
 collections:
   - name: "projects"
     label: "Projects"
