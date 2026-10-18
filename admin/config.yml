@@ -4,6 +4,7 @@ backend:
   branch: main
   base_url: https://decap-oauth.app--s.workers.dev
   auth_endpoint: auth
+  site_domain: devadathanm.github.io
 
 media_folder: "images"
 public_folder: "/images"
