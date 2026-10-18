@@ -3,7 +3,6 @@ backend:
   repo: devadathanm/devadathanm.github.io
   branch: main
   client_id: "Ov23liCySMbQ0YdWMk26"
-  base_url: https://api.github.com
 
 media_folder: "images"
 public_folder: "/images"
