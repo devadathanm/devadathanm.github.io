@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects & Case Studies | Devadathan M</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        pitch: '#020203',
+                        slateCard: '#08090c',
+                        titaniumBorder: '#1a1c24'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { background-color: #020203; color: #d1d5db; font-family: 'Inter', sans-serif; }
+        .mono-text { font-family: 'JetBrains Mono', monospace; }
+    </style>
+</head>
+<body class="bg-pitch text-gray-300 min-h-screen">
+
+    <!-- Top Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-pitch/80 backdrop-blur-md border-b border-titaniumBorder/50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <div class="w-9 h-9 rounded-full bg-slateCard border border-titaniumBorder flex items-center justify-center font-bold text-white mono-text text-sm group-hover:border-emerald-500 transition-colors">DM</div>
+                <span class="text-sm font-semibold text-white tracking-wide">DEVADATHAN M</span>
+            </a>
+            <a href="index.html" class="px-5 py-2 rounded-full border border-titaniumBorder bg-slateCard hover:bg-titaniumBorder/40 text-xs font-semibold text-white transition-all flex items-center space-x-2">
+                <i class="fa-solid fa-arrow-left text-xs text-emerald-400"></i>
+                <span>Back to Portfolio</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Archive -->
+    <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+        <div class="mb-12">
+            <span class="text-xs uppercase tracking-widest text-emerald-400 mono-text block mb-2">// Complete Archive</span>
+            <h1 class="text-3xl md:text-5xl font-bold text-white tracking-tight">Project Case Studies & Competitions</h1>
+            <p class="text-gray-400 text-sm mt-3 max-w-2xl">Explore detailed breakdowns of mechanical design systems, prototyping builds, national-level collegiate challenges, and CMS updates.</p>
+        </div>
+
+        <!-- Grid Container: Hardcoded Core 4 + CMS Dynamic Additions -->
+        <div id="projects-archive-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Project 1: Cardamom Cleaning Machine -->
+            <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 flex flex-col justify-between hover:border-emerald-500/50 transition-all">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">B.Tech Final Year Project</span>
+                        <span class="text-xs text-gray-500 mono-text">Amal Jyothi College</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Cardamom Cleaning & Processing Machine</h3>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Conducted field research through live interviews with farmers, store workers, and research center experts. Designed a portable, continuous-type auger mechanism optimized for minimal water consumption and high cleaning efficiency.</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-pitch border border-titaniumBorder">
+                    <strong class="text-xs font-bold text-emerald-400 uppercase block mb-1">Key Impact</strong>
+                    <span class="text-xs text-gray-300">Reduced water consumption while preserving seed integrity and minimizing husk damage.</span>
+                </div>
+            </div>
+
+            <!-- Project 2: Steaming & Folding Machine -->
+            <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 flex flex-col justify-between hover:border-emerald-500/50 transition-all">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">Diploma Capstone</span>
+                        <span class="text-xs text-gray-500 mono-text">Prototyping</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Semi-Automatic Steaming & Folding Machine</h3>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Engineered a mechanical system to automate garment steaming and folding processes from conceptual sketches to physical workshop fabrication.</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-pitch border border-titaniumBorder">
+                    <strong class="text-xs font-bold text-emerald-400 uppercase block mb-1">Key Impact</strong>
+                    <span class="text-xs text-gray-300">Delivered a fully operational physical prototype reducing manual cycle times.</span>
+                </div>
+            </div>
+
+            <!-- Project 3: 11th Go-Kart Design Challenge -->
+            <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 flex flex-col justify-between hover:border-emerald-500/50 transition-all">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">National Participant</span>
+                        <span class="text-xs text-gray-500 mono-text">Go-Kart Challenge</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">11th Go-Kart Design Challenge (GKDC)</h3>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">National-level participant contributing to structural chassis design, steering geometry calculations, braking layout, and hands-on track testing integration.</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-pitch border border-titaniumBorder">
+                    <strong class="text-xs font-bold text-emerald-400 uppercase block mb-1">Key Impact</strong>
+                    <span class="text-xs text-gray-300">Passed all national inspection rounds successfully with high torsional rigidity.</span>
+                </div>
+            </div>
+
+            <!-- Project 4: Sustainable Electric Vehicle Challenge -->
+            <div class="bg-slateCard border border-titaniumBorder rounded-[2.5rem] p-8 flex flex-col justify-between hover:border-emerald-500/50 transition-all">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full bg-titaniumBorder/60 text-gray-300 text-[10px] mono-text uppercase">National Participant</span>
+                        <span class="text-xs text-gray-500 mono-text">SEVC 2025</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Sustainable Electric Vehicle Challenge (SEVC)</h3>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">National-level participant focusing on eco-friendly electric powertrain layout optimization, packaging efficiency, and lightweight structural components.</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-pitch border border-titaniumBorder">
+                    <strong class="text-xs font-bold text-emerald-400 uppercase block mb-1">Key Impact</strong>
+                    <span class="text-xs text-gray-300">Complied with all collegiate EV safety, thermal management, and clearance rules.</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-titaniumBorder/40 text-center">
+        <p class="text-xs text-gray-500">&copy; 2026 Devadathan M. Built with Architectural Precision.</p>
+    </footer>
+
+    <!-- Script to Fetch and Append Additional CMS Projects -->
+    <script>
+        async function loadCMSProjectsArchive() {
+            try {
+                const response = await fetch('https://api.github.com/repos/devadathanm/devadathanm.github.io/contents/_content/projects');
+                if (!response.ok) return;
+                
+                const files = await response.json();
+                const grid = document.getElementById('projects-archive-grid');
+
+                for (const file of files) {
+                    if (file.name.endsWith('.md') || file.name.endsWith('.markdown')) {
+                        const fileRes = await fetch(file.download_url);
+                        const markdownText = await fileRes.text();
+
+                        const frontmatterMatch = markdownText.match(/^---([\s\S]*?)---/);
+                        if (frontmatterMatch) {
+                            const yamlLines = frontmatterMatch[1].trim().split('\n');
+                            const data = {};
+                            yamlLines.forEach(line => {
+                                const parts = line.split(':');
+                                if (parts.length >= 2) {
+                                    const key = parts[0].trim();
+                                    const val = parts.slice(1).join(':').trim().replace(/^["'](.*)["']$/, '$1');
+                                    data[key] = val;
+                                }
+                            });
+
+                            const bodyContent = markdownText.replace(/^---[\s\S]*?---/, '').trim();
+
+                            let imagePath = data.image || '';
+                            if (imagePath && !imagePath.startsWith('http') && !imagePath.startsWith('/')) {
+                                imagePath = '/' + imagePath;
+                            }
+
+                            const cardHTML = `
+                                <div class="bg-slateCard border border-emerald-500/60 shadow-[0_0_25px_rgba(16,185,129,0.15)] rounded-[2.5rem] p-8 flex flex-col justify-between">
+                                    <div>
+                                        <div class="flex items-center justify-between mb-4">
+                                            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] mono-text uppercase">${data.category || 'CMS Archive'}</span>
+                                            <span class="text-xs text-gray-500 mono-text">${data.date || ''}</span>
+                                        </div>
+                                        <h3 class="text-2xl font-bold text-white mb-3">${data.title || 'Untitled Project'}</h3>
+                                        ${imagePath ? `<img src="${imagePath}" alt="${data.title}" class="rounded-2xl mb-4 w-full h-48 object-cover border border-titaniumBorder" onerror="this.style.display='none'">` : ''}
+                                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">${data.description || bodyContent}</p>
+                                    </div>
+                                    ${data.impact ? `
+                                        <div class="p-4 rounded-2xl bg-pitch border border-titaniumBorder">
+                                            <strong class="text-xs font-bold text-emerald-400 uppercase block mb-1">Key Impact</strong>
+                                            <span class="text-xs text-gray-300">${data.impact}</span>
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            `;
+                            grid.insertAdjacentHTML('beforeend', cardHTML);
+                        }
+                    }
+                }
+            } catch (error) {
+                console.error("Error loading CMS archive projects:", error);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', loadCMSProjectsArchive);
+    </script>
+</body>
+</html>
