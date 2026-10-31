@@ -4,7 +4,7 @@ backend:
   name: github
   repo: devadathanm/devadathanm.github.io
   branch: main
-  base_url: https://REPLACE-WITH-YOUR-WORKER.workers.dev   # [ADD] your Cloudflare worker address
+  base_url: https://REPLACE-WITH-YOUR-WORKER.workers.dev    # [ADD] your Cloudflare worker address
   auth_endpoint: auth
 
 site_url: https://devadathanm.github.io
