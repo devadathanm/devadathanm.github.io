@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Projects | Devadathan M</title>
+<meta name="description" content="Machines, chassis and powertrain designs by Devadathan M, with photos.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#070b10">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&amp;family=Public+Sans:wght@300;400&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap" rel="stylesheet">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header id="hdr">
+ <div class="wrap bar">
+  <a class="brand" href="index.html">Devadathan <b>M</b></a>
+  <nav id="nav" aria-label="Main">
+   <a href="works.html" data-nav="works" aria-current="page">Projects</a>
+   <a href="skills.html" data-nav="skills">Skills</a>
+   <a href="about.html" data-nav="about">About</a>
+   <a href="contact.html" data-nav="contact">Contact</a>
+  </nav>
+  <div style="display:flex;align-items:center;gap:8px">
+   <button class="lamp" id="lamp" type="button" aria-label="Pull the lamp to switch light and dark theme">
+    <svg viewBox="0 0 46 58" aria-hidden="true"><line class="cord" x1="23" y1="0" x2="23" y2="16"/><path class="shade" d="M9 28c0-10 6-16 14-16s14 6 14 16z"/><rect x="8" y="27" width="30" height="3" rx="1.5" fill="currentColor" opacity=".7"/><circle class="bulb" cx="23" cy="32" r="4.5"/><g class="bead"><line class="cord" x1="36" y1="27" x2="36" y2="44"/><circle cx="36" cy="46" r="2.4" fill="var(--acc)"/></g></svg>
+   </button>
+   <button class="menu-btn" id="menu" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+ </div>
+</header>
+<main id="main">
+ <div class="wrap page-head">
+  <a class="more back" href="index.html">← Home</a>
+  <p class="kicker">Projects</p>
+  <h1>Things I’ve built.</h1>
+ </div>
+ <section class="block" style="border-top:0;padding-top:0">
+  <div class="wrap">
+   <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
+   <p class="count" id="count" aria-live="polite"></p>
+   <div class="list" id="list"></div>
+   <div style="text-align:center;margin-top:24px"><button class="btn" id="more" type="button" hidden>Show more</button></div>
+  </div>
+ </section>
+</main>
+<footer>
+ <div class="wrap">
+  <span>© Devadathan M · Kottayam, Kerala</span>
+  <span><a href="https://www.linkedin.com/in/devadathanm" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/devadathanm" target="_blank" rel="noopener">GitHub</a></span>
+ </div>
+</footer>
+<script src="site.js" defer></script>
+<script src="works.js" defer></script>
+</body>
+</html>

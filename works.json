@@ -1,0 +1,68 @@
+{
+  "works": [
+    {
+      "id": "cardamom",
+      "title": "Cardamom Cleaning Machine",
+      "label": "B.Tech Final Year",
+      "category": "Academic",
+      "featured": true,
+      "summary": "Portable, continuous-type auger mechanism with minimal water use.",
+      "tags": ["Auger mechanism", "Portable", "Low water use"],
+      "images": [],
+      "status": "",
+      "link": "",
+      "problem": "",
+      "build": "",
+      "result": "",
+      "stats": []
+    },
+    {
+      "id": "steaming",
+      "title": "Steaming and Folding Machine",
+      "label": "Diploma Capstone",
+      "category": "Academic",
+      "featured": true,
+      "summary": "Automated garment steaming and folding, from concept sketches to fabrication.",
+      "tags": ["Automation", "Concept to fabrication"],
+      "images": [],
+      "status": "",
+      "link": "",
+      "problem": "",
+      "build": "",
+      "result": "",
+      "stats": []
+    },
+    {
+      "id": "gokart",
+      "title": "11th Go-Kart Design Challenge",
+      "label": "National Competition",
+      "category": "Competition",
+      "featured": true,
+      "summary": "Tubular chassis structural design, steering geometry, and dynamic track testing.",
+      "tags": ["Chassis", "Steering geometry", "Track testing"],
+      "images": [],
+      "status": "",
+      "link": "",
+      "problem": "",
+      "build": "",
+      "result": "",
+      "stats": []
+    },
+    {
+      "id": "ev",
+      "title": "Electric Vehicle Challenge",
+      "label": "National Competition",
+      "category": "Competition",
+      "featured": true,
+      "summary": "Eco-friendly electric powertrain layout and packaging efficiency.",
+      "tags": ["Electric powertrain", "Packaging"],
+      "images": [],
+      "status": "",
+      "link": "",
+      "problem": "",
+      "build": "",
+      "result": "",
+      "stats": []
+    }
+  ]
+}

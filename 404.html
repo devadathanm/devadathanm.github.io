@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page not found | Devadathan M</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#070b10">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&amp;family=Public+Sans:wght@300;400&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap" rel="stylesheet">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<link rel="stylesheet" href="styles.css">
+<style>
+.lost{min-height:100svh;display:grid;place-items:center;text-align:center;padding:40px 0;position:relative;overflow:hidden}
+.lost .code{display:flex;align-items:center;justify-content:center;gap:clamp(6px,2vw,20px);font:200 clamp(88px,24vw,260px)/1 Outfit,sans-serif;letter-spacing:-.04em}
+.gear{width:clamp(80px,20vw,220px);height:clamp(80px,20vw,220px);background:none;border:0;padding:0;cursor:pointer;color:var(--acc);display:block}
+.gear svg{width:100%;height:100%;overflow:visible;animation:spin 14s linear infinite;transition:filter .3s}
+.gear.fast svg{animation-duration:1.2s}
+.gear:hover svg{filter:drop-shadow(0 0 14px var(--acc))}
+.gear:focus-visible{outline:2px solid var(--acc);outline-offset:6px;border-radius:50%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.lost h1{font:200 clamp(26px,4vw,44px)/1.2 Outfit,sans-serif;margin-top:28px}
+.lost p.msg{color:var(--mute);margin:14px auto 0;max-width:30em;font-size:clamp(16px,1.6vw,18px)}
+.lost p.hint{margin-top:18px;font-size:14px;color:var(--acc);min-height:1.4em}
+.lost .actions{justify-content:center;margin-top:30px}
+.lost .blueprint{position:absolute;inset:0;z-index:-1;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.5;-webkit-mask-image:radial-gradient(ellipse at 50% 40%,#000 10%,transparent 70%);mask-image:radial-gradient(ellipse at 50% 40%,#000 10%,transparent 70%)}
+@media (prefers-reduced-motion:reduce){.gear svg{animation:none}}
+</style>
+</head>
+<body>
+<main class="lost" id="main">
+ <div class="blueprint" aria-hidden="true"></div>
+ <div>
+  <div class="code" aria-label="404">
+   <span>4</span>
+   <button class="gear" id="gear" type="button" aria-label="A spinning gear. Tap it to make it spin faster.">
+    <svg viewBox="0 0 120 120" aria-hidden="true">
+     <path fill="none" stroke="currentColor" stroke-width="3" d="M60 8l7 14 15-5 3 15 15 3-5 15 14 7-14 7 5 15-15 3-3 15-15-5-7 14-7-14-15 5-3-15-15-3 5-15-14-7 14-7-5-15 15-3 3-15 15 5z"/>
+     <circle cx="60" cy="60" r="20" fill="none" stroke="currentColor" stroke-width="3"/>
+     <circle cx="60" cy="60" r="6" fill="currentColor"/>
+    </svg>
+   </button>
+   <span>4</span>
+  </div>
+  <h1>This page slipped off the assembly line.</h1>
+  <p class="msg">The link may be old, or the page may have moved. Nothing here is broken, it just isn’t where you expected.</p>
+  <p class="hint" id="hint" aria-live="polite"></p>
+  <div class="actions">
+   <a class="btn fill" href="index.html">Back to home</a>
+   <a class="btn" href="works.html">See projects</a>
+   <a class="btn" href="contact.html">Contact me</a>
+  </div>
+ </div>
+</main>
+<script>
+(function () {
+  var gear = document.getElementById('gear'), hint = document.getElementById('hint'), taps = 0;
+  var lines = ['Tightened a bolt. Still lost.', 'Two more turns and we are on track.', 'Gear spinning faster. Try Home?', 'Engineers always find the right part. Try the menu.', 'Okay, you found the easter egg. Home is one tap away.'];
+  gear.addEventListener('click', function () {
+    taps++;
+    gear.classList.add('fast');
+    clearTimeout(gear._t);
+    gear._t = setTimeout(function () { gear.classList.remove('fast'); }, 1600);
+    hint.textContent = lines[Math.min(taps - 1, lines.length - 1)];
+  });
+})();
+</script>
+</body>
+</html>

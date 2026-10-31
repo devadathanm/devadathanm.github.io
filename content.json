@@ -1,0 +1,23 @@
+{
+  "hero": {
+    "hello": "Hello, I’m",
+    "name": "Devadathan M",
+    "title": "Mechanical Design Engineer",
+    "statement": "I design, prototype, and test machines. Available for R&D roles."
+  },
+  "about": {
+    "photo": "images/photo-cutout.png",
+    "short": "As a mechanical engineer, I focus on R&D, hands-on prototyping, and CAD modeling. I also mentor students and working professionals in design tools.",
+    "lead": "Ever since I started modeling parts, I’ve been fascinated by how design choices play out in physical mechanisms. As a mechanical engineer, I focus on R&D, hands-on prototyping, and CAD modeling.",
+    "lead2": "I also mentor students and working professionals in design tools. I genuinely enjoy the process of seeing an initial concept come together as a fully functional build."
+  },
+  "contact": {
+    "email": "9497534004devan@gmail.com",
+    "whatsapp": "919497534004",
+    "whatsapp_message": "Hi Devadathan, I saw your portfolio and would like to talk.",
+    "linkedin": "https://www.linkedin.com/in/devadathanm",
+    "github": "https://github.com/devadathanm",
+    "location": "Kottayam, Kerala, India",
+    "resume": "devadathanmresumecv.pdf"
+  }
+}

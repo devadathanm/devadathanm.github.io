@@ -1,0 +1,72 @@
+{
+  "experience": [
+    {
+      "title": "Mechanical Faculty & CAD Trainer",
+      "org": "CADD Centre, Kottayam",
+      "when": "2025 to 2026",
+      "points": [
+        "Mentored trainees through practical capstone modeling projects.",
+        "Bridged classroom software training with industrial drafting standards."
+      ]
+    },
+    {
+      "title": "Mechanical Engineer, Design & Prototyping",
+      "org": "Agrowtein Labs",
+      "when": "2024 to 2025",
+      "points": [
+        "Optimized machine components through hands-on fabrication and fitment testing.",
+        "Resolved shop-floor assembly bottlenecks via rapid design modifications."
+      ]
+    },
+    {
+      "title": "Freelance Mechanical Designer",
+      "org": "Self-employed",
+      "when": "",
+      "points": [
+        "Translated conceptual sketches into fully constrained parametric assemblies.",
+        "Ensured all deliverables adhered strictly to manufacturing tolerances."
+      ]
+    },
+    {
+      "title": "Operations Department Coordinator",
+      "org": "IIEMS",
+      "when": "",
+      "points": [
+        "Managed schedules, task delegation, and departmental communication.",
+        "Ensured streamlined execution of internal operational workflows."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "title": "B.Tech, Mechanical Engineering",
+      "org": "Amal Jyothi College of Engineering",
+      "when": "2022 to 2025",
+      "points": []
+    },
+    {
+      "title": "Diploma in Mechanical Engineering",
+      "org": "Government Polytechnic College, Nattakom",
+      "when": "2020 to 2022",
+      "points": []
+    }
+  ],
+  "internships": [
+    {
+      "title": "Internship",
+      "org": "Keerachandra Pvt. Ltd.",
+      "when": "",
+      "points": [
+        "Hands-on exposure to manufacturing processes, machinery operations and production workflows."
+      ]
+    },
+    {
+      "title": "Internship",
+      "org": "Cochin Shipyard Ltd.",
+      "when": "",
+      "points": [
+        "Observed heavy fabrication, marine vessel construction and dockyard operations."
+      ]
+    }
+  ]
+}
