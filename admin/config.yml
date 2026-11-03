@@ -1,8 +1,8 @@
-```yaml
+
 # Decap CMS configuration
 # Portfolio: Devadathan Manoj
 # Authentication: GitHub OAuth through Cloudflare Worker
-
+```yaml
 backend:
   name: github
   repo: devadathanm/devadathanm.github.io
@@ -194,4 +194,3 @@ collections:
                 name: "resume"
                 widget: "string"
                 hint: "Upload the PDF to the repo root with this exact name"
-```
