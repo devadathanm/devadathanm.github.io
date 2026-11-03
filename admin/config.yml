@@ -1,21 +1,31 @@
-# Decap CMS. Opened from the private /admin/ page only (never linked from the site).
-# Log in with GitHub. Projects: add, delete, reorder and edit inside the list.
+```yaml
+# Decap CMS configuration
+# Portfolio: Devadathan Manoj
+# Authentication: GitHub OAuth through Cloudflare Worker
+
 backend:
   name: github
   repo: devadathanm/devadathanm.github.io
   branch: main
-  base_url: https://REPLACE-WITH-YOUR-WORKER.workers.dev    # [ADD] your Cloudflare worker address
+  base_url: https://devadathan-portfolio-auth.app--s.workers.dev
   auth_endpoint: auth
 
 site_url: https://devadathanm.github.io
 display_url: https://devadathanm.github.io
 logo_url: /images/photo-cutout.png
+
 media_folder: "images"
 public_folder: "/images"
+
 editor:
   preview: false
 
 collections:
+
+  # -----------------------------------------
+  # PROJECTS
+  # -----------------------------------------
+
   - name: "projects"
     label: "Projects"
     files:
@@ -30,11 +40,25 @@ collections:
             label_singular: "project"
             summary: "{{fields.title}} · {{fields.category}}"
             fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Short label (e.g. B.Tech Final Year)", name: "label", widget: "string"}
-              - {label: "Category", name: "category", widget: "select", options: ["Academic", "Competition", "Professional", "Freelance", "Personal"], default: "Academic"}
-              - {label: "Show on the home page (up to 3)", name: "featured", widget: "boolean", default: false}
-              - {label: "Summary (one or two sentences)", name: "summary", widget: "text"}
+              - { label: "Title", name: "title", widget: "string" }
+
+              - { label: "Short label (e.g. B.Tech Final Year)", name: "label", widget: "string" }
+
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options:
+                  - "Academic"
+                  - "Competition"
+                  - "Professional"
+                  - "Freelance"
+                  - "Personal"
+                default: "Academic"
+
+              - { label: "Show on the home page (up to 3)", name: "featured", widget: "boolean", default: false }
+
+              - { label: "Summary (one or two sentences)", name: "summary", widget: "text" }
+
               - label: "Photos (add as many as you like)"
                 name: "images"
                 widget: "list"
@@ -42,22 +66,34 @@ collections:
                 label_singular: "photo"
                 summary: "{{fields.caption}}"
                 fields:
-                  - {label: "Photo", name: "src", widget: "image"}
-                  - {label: "Caption", name: "caption", widget: "string", required: false}
-              - {label: "Tags", name: "tags", widget: "list", default: []}
-              - {label: "Status (e.g. In progress)", name: "status", widget: "string", required: false}
-              - {label: "Link", name: "link", widget: "string", required: false}
-              - {label: "Problem", name: "problem", widget: "text", required: false}
-              - {label: "Build", name: "build", widget: "text", required: false}
-              - {label: "Result", name: "result", widget: "text", required: false}
+                  - { label: "Photo", name: "src", widget: "image" }
+                  - { label: "Caption", name: "caption", widget: "string", required: false }
+
+              - { label: "Tags", name: "tags", widget: "list", default: [] }
+
+              - { label: "Status (e.g. In progress)", name: "status", widget: "string", required: false }
+
+              - { label: "Link", name: "link", widget: "string", required: false }
+
+              - { label: "Problem", name: "problem", widget: "text", required: false }
+
+              - { label: "Build", name: "build", widget: "text", required: false }
+
+              - { label: "Result", name: "result", widget: "text", required: false }
+
               - label: "Key numbers"
                 name: "stats"
                 widget: "list"
                 required: false
                 label_singular: "number"
                 fields:
-                  - {label: "Value (e.g. 12 kg)", name: "v", widget: "string"}
-                  - {label: "Meaning (e.g. Weight saved)", name: "l", widget: "string"}
+                  - { label: "Value (e.g. 12 kg)", name: "v", widget: "string" }
+                  - { label: "Meaning (e.g. Weight saved)", name: "l", widget: "string" }
+
+
+  # -----------------------------------------
+  # ABOUT PAGE
+  # -----------------------------------------
 
   - name: "about"
     label: "About page"
@@ -67,36 +103,44 @@ collections:
         file: "about.json"
         format: "json"
         fields:
+
           - label: "Experience"
             name: "experience"
             widget: "list"
             label_singular: "job"
             summary: "{{fields.title}}"
             fields:
-              - {label: "Role", name: "title", widget: "string"}
-              - {label: "Organisation", name: "org", widget: "string"}
-              - {label: "Dates (leave empty to hide)", name: "when", widget: "string", required: false}
-              - {label: "What I did (one point per line)", name: "points", widget: "list", default: []}
+              - { label: "Role", name: "title", widget: "string" }
+              - { label: "Organisation", name: "org", widget: "string" }
+              - { label: "Dates (leave empty to hide)", name: "when", widget: "string", required: false }
+              - { label: "What I did (one point per line)", name: "points", widget: "list", default: [] }
+
           - label: "Education"
             name: "education"
             widget: "list"
             label_singular: "course"
             summary: "{{fields.title}}"
             fields:
-              - {label: "Course", name: "title", widget: "string"}
-              - {label: "College", name: "org", widget: "string"}
-              - {label: "Dates (leave empty to hide)", name: "when", widget: "string", required: false}
-              - {label: "Notes", name: "points", widget: "list", default: [], required: false}
+              - { label: "Course", name: "title", widget: "string" }
+              - { label: "College", name: "org", widget: "string" }
+              - { label: "Dates (leave empty to hide)", name: "when", widget: "string", required: false }
+              - { label: "Notes", name: "points", widget: "list", default: [], required: false }
+
           - label: "Internships"
             name: "internships"
             widget: "list"
             label_singular: "internship"
             summary: "{{fields.org}}"
             fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Company", name: "org", widget: "string"}
-              - {label: "Dates (leave empty to hide)", name: "when", widget: "string", required: false}
-              - {label: "What I did (one point per line)", name: "points", widget: "list", default: []}
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Company", name: "org", widget: "string" }
+              - { label: "Dates (leave empty to hide)", name: "when", widget: "string", required: false }
+              - { label: "What I did (one point per line)", name: "points", widget: "list", default: [] }
+
+
+  # -----------------------------------------
+  # WEBSITE TEXT / CONTENT
+  # -----------------------------------------
 
   - name: "site"
     label: "Website text"
@@ -106,32 +150,48 @@ collections:
         file: "content.json"
         format: "json"
         fields:
+
           - label: "Home page"
             name: "hero"
             widget: "object"
             collapsed: false
             fields:
-              - {label: "Small line above name", name: "hello", widget: "string"}
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Job title", name: "title", widget: "string"}
-              - {label: "Short statement", name: "statement", widget: "text"}
+              - { label: "Small line above name", name: "hello", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Job title", name: "title", widget: "string" }
+              - { label: "Short statement", name: "statement", widget: "text" }
+
           - label: "About"
             name: "about"
             widget: "object"
             collapsed: true
             fields:
-              - {label: "Short text (home page)", name: "short", widget: "text"}
-              - {label: "About paragraph 1", name: "lead", widget: "text"}
-              - {label: "About paragraph 2", name: "lead2", widget: "text"}
+              - { label: "Short text (home page)", name: "short", widget: "text" }
+              - { label: "About paragraph 1", name: "lead", widget: "text" }
+              - { label: "About paragraph 2", name: "lead2", widget: "text" }
+
           - label: "Contact"
             name: "contact"
             widget: "object"
             collapsed: true
             fields:
-              - {label: "Email", name: "email", widget: "string"}
-              - {label: "WhatsApp number (country code, no +)", name: "whatsapp", widget: "string", hint: "Example: 919497534004"}
-              - {label: "WhatsApp message", name: "whatsapp_message", widget: "text"}
-              - {label: "LinkedIn URL", name: "linkedin", widget: "string"}
-              - {label: "GitHub URL", name: "github", widget: "string"}
-              - {label: "Location", name: "location", widget: "string"}
-              - {label: "Resume file name", name: "resume", widget: "string", hint: "Upload the PDF to the repo root with this exact name"}
+              - { label: "Email", name: "email", widget: "string" }
+
+              - label: "WhatsApp number (country code, no +)"
+                name: "whatsapp"
+                widget: "string"
+                hint: "Example: 919497534004"
+
+              - { label: "WhatsApp message", name: "whatsapp_message", widget: "text" }
+
+              - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
+
+              - { label: "GitHub URL", name: "github", widget: "string" }
+
+              - { label: "Location", name: "location", widget: "string" }
+
+              - label: "Resume file name"
+                name: "resume"
+                widget: "string"
+                hint: "Upload the PDF to the repo root with this exact name"
+```
